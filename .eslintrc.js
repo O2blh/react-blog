@@ -26,5 +26,12 @@ module.exports = {
     'no-console': 1,
     'react/jsx-filename-extension': 'off',
     'prettier/prettier': 'error',
+    'react/function-component-definition': [
+      2,
+      {
+        namedComponents: ['function-declaration', 'function-expression', 'arrow-function'],
+        unnamedComponents: ['function-expression', 'arrow-function'],
+      },
+    ],
   },
 }
