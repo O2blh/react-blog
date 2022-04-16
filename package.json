@@ -40,6 +40,8 @@
     ]
   },
   "dependencies": {
+    "antd": "^4.19.5",
+    "babel-plugin-import": "^1.13.5",
     "next": "^12.1.4",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
