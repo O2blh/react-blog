@@ -33,5 +33,6 @@ module.exports = {
         unnamedComponents: ['function-expression', 'arrow-function'],
       },
     ],
+    'import/extensions': [1, 'never'],
   },
 }
