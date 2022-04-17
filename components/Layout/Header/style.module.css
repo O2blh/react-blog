@@ -1,0 +1,152 @@
+@value constants: '../../../styles/constants.module.css';
+@value headerHeight, contentWidth from constants;
+@value colors: '../../../styles/colors.module.css';
+@value themeColor1, themeColor2, hoverColor, textColor from colors;
+
+.nav{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: headerHeight;
+    background-color: themeColor1;
+}
+
+.navContent{
+    position: relative;
+    width: contentWidth;
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: textColor;
+}
+
+/*图标按钮样式*/
+.btn{
+    transform: translateY(-50%);
+    width: 60px;
+    height: 44px;
+    font-size: 26px;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.btn:hover{
+    background-color: hoverColor;
+}
+
+/*主页*/
+.homeBtn{
+    position: absolute;
+    left: 0;
+    top: 50%;
+}
+
+/*背景按钮*/
+.bgBtn{
+    position: absolute;
+    right: 80px;
+    top: 50%;
+}
+
+.bgBtn:hover .modeOptions{
+    top: 60px;
+}
+
+/*背景选项*/
+.modeOptions{
+    position: absolute;
+    top: -180px;
+    background-color: themeColor1;
+    border-radius: 14px;
+    padding: 10px;
+    transition: all .3s;
+}
+.modeOption{
+    width: 60px;
+    height: 44px;
+    border-radius: 14px;
+    margin-bottom: 10px;
+    transition: all .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px
+}
+
+.modeOption:last-child{
+    margin-bottom: 0;
+}
+.modeOption:hover{
+    transform: scale(1.07);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+/*后台管理按钮*/
+.adminBtn{
+    position: absolute;
+    right: 0;
+    top: 50%;
+}
+
+/**一级导航*/
+.navBtn{
+    position: relative;
+    height: 44px;
+    width: 70px;
+    font-size: 22px;
+    font-weight: 700;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-right: 20px;
+    color: textColor;
+}
+.navBtn:hover{
+    color: textColor;
+    background-color: hoverColor;
+}
+.navBtn:hover .secondNav{
+    top: 60px;
+}
+
+/**二级导航*/
+.secondNav{
+    position: absolute;
+    top: -180px;
+    background-color: themeColor1;
+    border-radius: 14px;
+    padding: 10px;
+    transition: all .3s;
+}
+
+.secondNavBtn{
+    height: 36px;
+    width: 70px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: textColor;
+    background-color: themeColor2;
+    margin-bottom: 10px;
+}
+
+.secondNavBtn:hover{
+    color: textColor;
+    background-color: hoverColor;
+}
+
+.secondNavBtn:last-child{
+    margin-bottom: 0;
+}
+
