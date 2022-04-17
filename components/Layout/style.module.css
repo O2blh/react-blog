@@ -1,0 +1,12 @@
+@value constants: '../../styles/constants.module.css';
+@value headerHeight, footerHeight from constants;
+
+.AppBox{
+    background-image: url('/bg0.webp');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+.main{
+    min-height: calc(100vh - footerHeight);
+}
