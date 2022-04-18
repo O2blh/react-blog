@@ -21,6 +21,7 @@
     font-weight: 700;
     margin-right: 10px;
     transition: all .2s;
+    white-space: nowrap;
 }
 .tag:hover{
     background-color: hoverColor;
