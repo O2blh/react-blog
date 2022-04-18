@@ -1,0 +1,19 @@
+@value colors: '../../styles/colors.module.css';
+@value themeColor1, themeColor2, hoverColor, textColor from colors;
+
+.backTop {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background-color: themeColor1;
+  color: textColor;
+  font-size: 22px;
+  transition: all .2s;
+}
+
+.backTop:hover{
+    background-color: hoverColor;
+}
