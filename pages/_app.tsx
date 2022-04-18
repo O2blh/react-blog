@@ -1,10 +1,14 @@
 import type { AppProps } from 'next/app'
 import 'antd/dist/antd.css'
-import '../styles/globals.css'
+import '@/styles/global.css'
+import Layout from '@/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  // eslint-disable-next-line react/jsx-props-no-spreading
-  return <Component {...pageProps} />
+  return (
+    <Layout>
+      <Component {...pageProps} />
+    </Layout>
+  )
 }
 
 export default MyApp
