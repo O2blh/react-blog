@@ -1,0 +1,30 @@
+@value constants: './constants.module.css';
+@value headerHeight, contentWidth from constants;
+@value colors: './colors.module.css';
+@value textColor from colors;
+
+.center{
+    width: contentWidth;
+    margin: 0 auto;
+}
+.box {
+    width: 1000px;
+    height: 100vh;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: textColor;
+}
+.title{
+    font-size: 50px;
+    font-weight: 700;
+}
+.desc {
+    font-size: 28px;
+}
+.body{
+    height: 1000px;
+    color: textColor;
+}
