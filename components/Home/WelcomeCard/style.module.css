@@ -1,0 +1,36 @@
+@value colors: '../../../styles/colors.module.css';
+@value hoverColor from colors;
+
+.card{
+    background-color: themeColor;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+    overflow: hidden;
+    transition: all .3s;
+    cursor: pointer;
+    color: textColor;
+}
+.card:hover{
+    transform: scale(1.04);
+}
+.welcomeCard{
+    position: relative;
+    height: 200px;
+}
+.welcome{
+    font-size: 18px;
+    margin: 0;
+    line-height: 40px;
+}
+.strong{
+    color: hoverColor;
+}
+
+.avatar{
+    position: absolute;
+    right: -30px;
+    bottom: 0;
+    height: 200px;
+}
