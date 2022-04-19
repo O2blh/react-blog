@@ -1,5 +1,5 @@
 @value constants: './constants.module.css';
-@value headerHeight, contentWidth from constants;
+@value contentWidth, asideWidth from constants;
 @value colors: './colors.module.css';
 @value textColor from colors;
 
@@ -17,7 +17,7 @@
     flex-direction: column;
     color: textColor;
 }
-.title{
+.name{
     font-size: 50px;
     font-weight: 700;
 }
@@ -25,6 +25,16 @@
     font-size: 28px;
 }
 .body{
-    height: 1000px;
     color: textColor;
+    display: flex;
+}
+
+/*主要内容区*/
+.section{
+    width: calc(100% - asideWidth);
+    padding-right: 20px;
+}
+/*侧边栏*/
+.aside{
+    width: asideWidth;
 }
