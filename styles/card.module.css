@@ -1,0 +1,17 @@
+@value colors: './colors.module.css';
+@value textColor, themeColor from colors;
+
+.card{
+    background-color: themeColor;
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 20px;
+    user-select: none;
+    overflow: hidden;
+    transition: all .3s;
+    cursor: pointer;
+    color: textColor;
+}
+.card:hover{
+    transform: scale(1.04);
+}
