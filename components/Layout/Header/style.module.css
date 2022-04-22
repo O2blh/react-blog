@@ -10,6 +10,7 @@
     right: 0;
     height: headerHeight;
     background-color: themeColor1;
+    z-index: 100;
 }
 
 .navContent{
