@@ -1,0 +1,9 @@
+@value colors: '../../../styles/colors.module.css';
+@value hoverColor, textColor, themeColor1 from colors;
+
+.notice{
+    background-color: themeColor1;
+    border-radius: 14px;
+    font-size: 16px;
+    padding: 14px;
+}
