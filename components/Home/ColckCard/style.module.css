@@ -1,0 +1,84 @@
+@value colors: '../../../styles/colors.module.css';
+@value hoverColor, textColor, themeColor1 from colors;
+
+.rim{
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    border: 2px solid textColor;
+    background-color: themeColor1;
+}
+.scale{
+    position: absolute;
+    height: 2px;
+    background-color: textColor;
+    width: 22px;
+}
+.scale0{
+    top: 0;
+    left: 50%;
+    transform-origin: 0 0;
+    transform: translateX(1px) rotateZ(90deg);
+}
+.scale1{
+    top: 50%;
+    right: 0;
+    transform: translateY(-1px);
+}
+.scale2{
+    bottom: 0;
+    left: 50%;
+    transform-origin: 0 2px;
+    transform: translateX(1px) rotateZ(-90deg);
+}
+.scale3{
+    top: 50%;
+    left: 0;
+    transform: translateY(-1px);
+}
+
+.center{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    border-radius: 50%;
+    background-color: hoverColor;
+    z-index: 10;
+}
+.hourHand{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height:6px;
+    width: 25%;
+    transform: translateY(-50%);
+    background-color: textColor;
+    border-radius: 3px;
+    transform-origin: 0 3px;
+}
+.minuteHand{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height:4px;
+    width: 35%;
+    transform: translateY(-50%);
+    background-color: textColor;
+    border-radius: 2px;
+    transform-origin: 0 2px;
+}
+.secondHand{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height:2px;
+    width: 40%;
+    transform: translateY(-50%);
+    background-color: hoverColor;
+    border-radius: 1px;
+    transform-origin: 0 1px;
+}
