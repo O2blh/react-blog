@@ -1,0 +1,31 @@
+@value colors: '../../../styles/colors.module.css';
+@value hoverColor, textColor from colors;
+
+.statistics{
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}
+.item{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    padding: 2px 12px;
+    border-radius: 16px;
+    transition: all .3s;
+    line-height: 1.5;
+}
+.item:hover{
+    background-color: hoverColor;
+}
+.title{
+    color: textColor;
+}
+.count{
+    color: hoverColor;
+}
+.item:hover .count{
+    color: textColor;
+}
