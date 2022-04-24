@@ -40,6 +40,7 @@
     margin: 0 10px;
     border-radius: 10px;
     background-color: themeColor1;
+    transition: all .3s;
 }
 .tag:hover{
     background-color: hoverColor;

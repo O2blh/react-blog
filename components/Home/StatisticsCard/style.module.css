@@ -25,6 +25,7 @@
 }
 .count{
     color: hoverColor;
+    font-weight: 700;
 }
 .item:hover .count{
     color: textColor;

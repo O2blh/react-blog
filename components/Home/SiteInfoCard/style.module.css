@@ -7,6 +7,7 @@
     font-size: 18px;
     border-radius: 14px;
     padding: 4px 12px;
+    transition: all .3s;
 }
 .info:first-child{
     margin-bottom: 8px;
