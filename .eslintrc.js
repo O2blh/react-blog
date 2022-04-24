@@ -36,5 +36,7 @@ module.exports = {
     'import/extensions': [1, 'never'],
     'react/jsx-props-no-spreading': 0,
     'no-unused-vars': 1,
+    'import/prefer-default-export': 0,
+    'no-underscore-dangle': 0,
   },
 }
