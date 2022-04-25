@@ -9,7 +9,6 @@
     user-select: none;
     overflow: hidden;
     transition: all .3s;
-    cursor: pointer;
     color: textColor;
 }
 .card:hover{

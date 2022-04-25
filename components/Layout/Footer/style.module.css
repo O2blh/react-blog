@@ -14,6 +14,9 @@
     font-weight: 700;
     font-size: 16px;
 }
+.footerTitle{
+    user-select: none;
+}
 .tag{
     background-color: themeColor1;
     padding: 4px 8px;
@@ -22,6 +25,7 @@
     margin-right: 10px;
     transition: all .2s;
     white-space: nowrap;
+    user-select: none;
 }
 .tag:hover{
     background-color: hoverColor;
