@@ -2,10 +2,18 @@ import React from 'react'
 import { Pagination } from 'antd'
 import styles from './style.module.css'
 
-const MyPagination = () => {
+const MyPagination = ({ total = 0, onPageChange, pageSize, current }) => {
   return (
     <div id='myPagination'>
-      <Pagination className={styles.pagination} defaultCurrent={1} total={500} showSizeChanger={false} />
+      <Pagination
+        className={styles.pagination}
+        defaultCurrent={1}
+        total={total}
+        pageSize={pageSize}
+        showSizeChanger={false}
+        onChange={onPageChange}
+        current={current}
+      />
     </div>
   )
 }

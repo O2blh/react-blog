@@ -3,10 +3,10 @@ import React from 'react'
 import cardStyles from '@/styles/card.module.css'
 import styles from './style.module.css'
 
-const NoticeCard = () => {
+const NoticeCard = ({ notice }) => {
   return (
     <div className={cardStyles.card}>
-      <div className={styles.notice}>我一定会回来的,我一定会回来的</div>
+      <div className={styles.notice}>{notice}</div>
     </div>
   )
 }

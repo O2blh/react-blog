@@ -1,25 +1,33 @@
 import React from 'react'
 import classNames from 'classnames'
+import dayjs from 'dayjs'
 import cardStyles from '@/styles/card.module.css'
 import styles from './style.module.css'
 
-const ArticleCard = () => {
+const ArticleCard = ({ articles }) => {
   return (
-    <div className={classNames(cardStyles.card, styles.article)}>
-      <div className={styles.title}>ES6 学习笔记</div>
-      <p className={styles.content}>
-        ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记S6 学习笔记ES6 学习笔记ES6
-        学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记S6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6
-        学习笔记ES6 学习笔记ES6 学习笔记S6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6
-        学习笔记S6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记S6 学习笔记ES6
-        学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记ES6 学习笔记
-      </p>
-      <div className={styles.info}>
-        <span className={classNames(styles.tag, styles.date)}>2022-04-19</span>
-        <span className={styles.tag}>ES6</span>
-        <span className={styles.tag}>Proxy</span>
-      </div>
-    </div>
+    <>
+      {articles.map((article) => {
+        return (
+          <div key={article._id} className={classNames(cardStyles.card, styles.article)}>
+            <div className={styles.title}>{article.articleTitle}</div>
+            <p className={styles.content}>
+              {article.articleContent.replace(/<a(.*?)>(.*?)<\/a>/g, '$2').replace(/[# |**|`|>]/g, '')}
+            </p>
+            <div className={styles.info}>
+              <span className={classNames(styles.tag, styles.date)}>
+                {dayjs(article.modifyDate).format('YYYY-MM-DD')}
+              </span>
+              {article.tags.map((tag) => (
+                <span key={tag} className={styles.tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        )
+      })}
+    </>
   )
 }
 
