@@ -1,0 +1,60 @@
+@value colors: '../../../styles/colors.module.css';
+@value themeColor1, hoverColor, textColor, textColor2 from colors;
+
+.copyRight{
+    position: relative;
+    background-color: themeColor1;
+    border-radius: 20px;
+    padding: 20px; 
+    color: textColor2;
+}
+.articleTitle{
+    font-size: 20px;
+    font-weight: 700;
+}
+.articleLink{
+    display: flex;
+    font-size: 14px;
+    align-items: center;
+}
+.copyBtn{
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s;
+}
+.copyBtn:hover{
+    background-color: hoverColor;
+    color: textColor;
+}
+
+.statement{
+    font-size: 16px;
+}
+.agreement,
+.sitename{
+    padding: 4px;
+    border-radius: 8px;
+    transition: all .3s;
+    cursor: pointer;
+    font-weight: 700;
+}
+.agreement:hover,
+.sitename:hover{
+    background-color: hoverColor;
+    color: textColor;
+}
+
+.copyrightIcon{
+    width: 128px;
+    height: 128px;
+    position: absolute;
+    right: 20px;
+    top: 4px;
+    font-size: 128px;
+}
