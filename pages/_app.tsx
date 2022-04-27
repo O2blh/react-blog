@@ -2,6 +2,8 @@ import type { AppProps } from 'next/app'
 import 'antd/dist/antd.css'
 import '@/styles/global.css'
 import '@/styles/pagination.css'
+import '@/styles/hljs.custom.css'
+import '@/styles/marked.css'
 import Layout from '@/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
