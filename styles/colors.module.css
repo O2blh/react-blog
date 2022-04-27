@@ -3,5 +3,5 @@
 @value themeColor2: var(--themeColor2, rgb(39, 95, 89));
 @value hoverColor: var(--hoverColor, rgb(98, 164, 218));
 @value textColor: var(--textColor, rgb(255, 255, 255));
-
-
+@value textColor2: var(--textColor2,#a7a7a7);
+@value tipColor: var(--tip, rgb(116, 116, 116));
