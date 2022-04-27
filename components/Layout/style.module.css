@@ -9,4 +9,5 @@
 }
 .main{
     min-height: calc(100vh - footerHeight);
+    padding-bottom: 40px;
 }
