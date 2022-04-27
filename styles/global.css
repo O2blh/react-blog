@@ -30,6 +30,10 @@ body{
 ::-webkit-scrollbar-thumb{
   border-radius: 7px;
   background: var(--themeColor1, rgb(39, 95, 89));
+  transition: all .3s;
+}
+::-webkit-scrollbar-thumb:hover{
+  background: var(--hoverColor, rgb(98, 164, 218));
 }
 ::-webkit-scrollbar-track{
   border-radius: 7px;
