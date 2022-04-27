@@ -1,0 +1,51 @@
+@value colors: '../../styles/colors.module.css';
+@value textColor, themeColor, hoverColor from colors;
+@value constants: '../../styles/constants.module.css';
+@value contentWidth from constants;
+
+.center{
+    width: contentWidth;
+    margin: 0 auto;
+}
+
+.box{
+    width: 1000px;
+    height: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    color: textColor;
+    font-size: 56px;
+    font-weight: 700;
+}
+.classify,
+.publishDate{
+    padding: 8px 12px;
+    margin-right: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: textColor;
+    background-color: themeColor;
+    transition: all .3s;
+    user-select: none;
+}
+.classify:hover,
+.publishDate:hover{
+    background-color: hoverColor;
+}
+
+.card{
+    font-size: 20px;
+    line-height: 1.6em;
+    margin: auto;
+    padding: 40px;
+    width: 1000px;
+    word-break: break-all;
+    background-color: themeColor;
+    border-radius: 20px;
+    user-select: text;
+    color: textColor;
+}
