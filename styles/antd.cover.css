@@ -1,4 +1,19 @@
+/* Popover组件样式重写*/
 
+.ant-popover-arrow {
+    display: none;
+  }
+  
+.ant-popover-inner {
+border-radius: 16px;
+overflow: hidden;
+background-color: var(--themeColor1, rgb(22, 54, 51));
+}
+
+/* Popover组件样式重写*/
+
+
+/* Pagination组件样式重写*/
 #myPagination .ant-pagination-prev,
 #myPagination .ant-pagination-next,
 #myPagination .ant-pagination-item,
@@ -44,3 +59,4 @@
     border-radius: 14px;
     color: var(--textColor, rgb(255, 255, 255));
 }
+/* Pagination组件样式重写*/
