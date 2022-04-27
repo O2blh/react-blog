@@ -1,0 +1,38 @@
+@value colors: '../../../../styles/colors.module.css';
+@value themeColor1, hoverColor from colors;
+
+.emojiBtn{
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    background-color: themeColor1;
+    transition: all .3s;
+    cursor: pointer;
+    margin-right: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    user-select: none;
+}
+.emojiBtn:hover{
+    background-color: hoverColor;
+}
+.emojiContent{
+    width: 368px;
+    word-break: break-all;
+}
+.emoji{
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 20px;  
+    cursor: pointer;
+    transition: all .3s;
+}
+.emoji:hover{
+    background-color: hoverColor;
+}
