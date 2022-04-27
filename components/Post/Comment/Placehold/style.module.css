@@ -1,0 +1,16 @@
+@value colors: '../../../../styles/colors.module.css';
+@value tipColor from colors;
+
+
+.noMsg,
+.hasMsg{
+    height: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    user-select: none;
+    color: tipColor;
+}
+.hasMsg{
+    height: 60px;
+}
