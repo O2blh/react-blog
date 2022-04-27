@@ -1,0 +1,16 @@
+@value colors: '../../../styles/colors.module.css';
+@value themeColor1, hoverColor from colors;
+
+.articleTags{
+    margin-bottom: 12px;
+}
+.tag{
+    background-color: themeColor1;
+    padding: 4px 8px;
+    border-radius: 8px;
+    margin-right: 16px;
+    transition: all .3s;
+}
+.tag:hover{
+    background-color: hoverColor;
+}
