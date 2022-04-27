@@ -4,7 +4,7 @@ import { GetServerSideProps } from 'next'
 import Router from 'next/router'
 import { SITE_NAME } from '@/constants/siteInfo'
 import usePoem from '@/hooks/usePoem'
-import { getArticles, getClassifies, getTags, getNotice } from '@/request/api'
+import { getArticlesPagination, getClassifies, getTags, getNotice } from '@/request/api'
 import { IArticle, IClassify, ITag, INotice } from '@/interface'
 
 import ArticleCard from '@/components/Home/ArticleCard'
@@ -79,7 +79,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     options.page = Number(context.query.page)
     CURRENT = options.page
   }
-  const articles = await getArticles(options)
+  const articles = await getArticlesPagination(options)
   const classifies = await getClassifies()
   const tags = await getTags()
   const notice = await getNotice()
