@@ -38,5 +38,8 @@ module.exports = {
     'no-unused-vars': 1,
     'import/prefer-default-export': 0,
     'no-underscore-dangle': 0,
+    'jsx-a11y/click-events-have-key-events': 0,
+    'jsx-a11y/no-static-element-interactions': 0,
+    'react/no-array-index-key': 1,
   },
 }
