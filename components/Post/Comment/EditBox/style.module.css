@@ -1,9 +1,17 @@
 @value colors: '../../../../styles/colors.module.css';
-@value themeColor1, themeColor2, hoverColor, textColor from colors;
+@value themeColor1, themeColor2, hoverColor, textColor, textColor2 from colors;
 
 .editBox{
-    display: flex;
     margin: 10px 0 20px;
+}
+.contentBox{
+    display: flex;
+}
+.replyNameBox{
+    font-size: 18px;
+}
+.replyName{
+    color: textColor2;
 }
 .avatarBox{
     width: 80px;
@@ -96,6 +104,7 @@
 .emojiBtn:hover{
     background-color: hoverColor;
 }
+.cancelBtn,
 .previewBtn,
 .sendBtn{
     position: absolute;
@@ -106,10 +115,14 @@
     transition: all .3s;
     cursor: pointer;
 }
+.cancelBtn:hover
 .previewBtn:hover,
 .sendBtn:hover{
     background-color: hoverColor;
 }
 .previewBtn{
     right: 80px;
+}
+.cancelBtn{
+    right: 160px;
 }

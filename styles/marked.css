@@ -95,6 +95,13 @@
 .marked hr {
   margin: 20px 0;
 }
+
+/*评论区*/
+.commentContent p
+{
+  margin: 0;
+  padding: 0;
+}
   
   @media screen and (max-width: 1240px) {
     .marked h2,
