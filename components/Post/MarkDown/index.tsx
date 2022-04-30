@@ -1,8 +1,14 @@
 import React from 'react'
+import classNames from 'classnames'
 import { marked } from 'marked'
 import hljs from 'highlight.js'
 
-const MarkDown = ({ content }) => {
+interface IProps {
+  content: string
+  className?: string
+}
+
+const MarkDown: React.FC<IProps> = ({ content, className }) => {
   hljs.configure({
     classPrefix: 'hljs-',
     languages: ['CSS', 'HTML', 'JavaScript', 'TypeScript', 'Markdown'],
@@ -16,13 +22,16 @@ const MarkDown = ({ content }) => {
 
   return (
     <div
-      className='marked'
-      style={{ marginBottom: '60px' }}
+      className={classNames('marked', className)}
       dangerouslySetInnerHTML={{
         __html: marked(content || '').replace(/<pre>/g, '<pre id="hljs">'),
       }}
     />
   )
+}
+
+MarkDown.defaultProps = {
+  className: '',
 }
 
 export default MarkDown
