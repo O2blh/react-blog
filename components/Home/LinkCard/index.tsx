@@ -1,9 +1,7 @@
 import React from 'react'
-import classNames from 'classnames'
 import Icon from '@ant-design/icons/lib/components/Icon'
 import { GithubOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons'
-
-import cardStyles from '@/styles/card.module.css'
+import Card from '@/components/Card'
 import styles from './style.module.css'
 
 const CsdnSvg = () => (
@@ -20,7 +18,7 @@ const CsdnIcon = (props) => <Icon component={CsdnSvg} {...props} />
 
 const LinkCard = () => {
   return (
-    <div className={classNames(cardStyles.card, styles.linkCard)}>
+    <Card className={styles.card}>
       <a href='https://gitee.com/bao-longhui/react-blog' target='_blank' rel='noreferrer' className={styles.icon}>
         <GithubOutlined />
       </a>
@@ -33,7 +31,7 @@ const LinkCard = () => {
       <div className={styles.icon}>
         <WechatOutlined />
       </div>
-    </div>
+    </Card>
   )
 }
 

@@ -1,13 +1,12 @@
 import React from 'react'
-
-import cardStyles from '@/styles/card.module.css'
+import Card from '@/components/Card'
 import styles from './style.module.css'
 
 const NoticeCard = ({ notice }) => {
   return (
-    <div className={cardStyles.card}>
+    <Card className={styles.card}>
       <div className={styles.notice}>{notice}</div>
-    </div>
+    </Card>
   )
 }
 

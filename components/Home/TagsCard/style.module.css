@@ -2,9 +2,12 @@
 @value hoverColor, textColor from colors;
 
 
-.tags{
+.card{
     display: flex;
     flex-wrap: wrap;
+}
+.card:hover{
+    transform: scale(1.04);
 }
 .tag{
     font-size: 18px;

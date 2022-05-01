@@ -4,9 +4,6 @@
 .article{
     cursor: pointer;
 }
-.article:hover{
-    transform: scale(1.02);
-}
 .title{
     font-size: 28px;
     font-weight: 700;

@@ -1,14 +1,9 @@
-import React, { useEffect, useReducer, useRef, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import dayjs from 'dayjs'
-
-import cardStyles from '@/styles/card.module.css'
+import useForceUpdate from '@/hooks/useForceUpdate'
 import classNames from 'classnames'
+import Card from '@/components/Card'
 import styles from './style.module.css'
-
-const useForceUpdate = function () {
-  const [, forceUpdate] = useReducer((count) => count + 1, 0)
-  return forceUpdate
-}
 
 const ColckCard = () => {
   const fordeUpdate = useForceUpdate()
@@ -33,7 +28,7 @@ const ColckCard = () => {
   })
 
   return (
-    <div className={cardStyles.card}>
+    <Card className={styles.card}>
       <div className={styles.rim}>
         <div className={classNames(styles.scale, styles.scale0)} />
         <div className={classNames(styles.scale, styles.scale1)} />
@@ -44,7 +39,7 @@ const ColckCard = () => {
         <div className={styles.minuteHand} style={{ transform: `translateY(-50%) rotate(${minuiteHandDeg}deg)` }} />
         <div className={styles.secondHand} style={{ transform: `translateY(-50%) rotate(${secondHandDeg}deg)` }} />
       </div>
-    </div>
+    </Card>
   )
 }
 

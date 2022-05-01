@@ -2,7 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import dayjs from 'dayjs'
 import Link from 'next/link'
-import cardStyles from '@/styles/card.module.css'
+import Card from '@/components/Card'
 import styles from './style.module.css'
 
 const ArticleCard = ({ articles }) => {
@@ -11,7 +11,7 @@ const ArticleCard = ({ articles }) => {
       {articles.map((article) => {
         return (
           <Link key={article._id} href={`/posts/${article._id}`}>
-            <div className={classNames(cardStyles.card, styles.article)}>
+            <Card className={styles.article}>
               <div className={styles.title}>{article.articleTitle}</div>
               <p className={styles.content}>
                 {article.articleContent.replace(/<a(.*?)>(.*?)<\/a>/g, '$2').replace(/[# |**|`|>]/g, '')}
@@ -26,7 +26,7 @@ const ArticleCard = ({ articles }) => {
                   </span>
                 ))}
               </div>
-            </div>
+            </Card>
           </Link>
         )
       })}

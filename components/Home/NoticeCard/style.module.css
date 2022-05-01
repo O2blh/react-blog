@@ -1,6 +1,10 @@
 @value colors: '../../../styles/colors.module.css';
 @value hoverColor, textColor, themeColor1 from colors;
 
+.card:hover
+{
+    transform: scale(1.04);
+}
 .notice{
     background-color: themeColor1;
     border-radius: 14px;

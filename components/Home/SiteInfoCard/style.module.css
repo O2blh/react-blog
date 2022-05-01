@@ -1,6 +1,10 @@
 @value colors: '../../../styles/colors.module.css';
 @value hoverColor, textColor from colors;
 
+.card:hover
+{
+    transform: scale(1.04);
+}
 .info{
     display: flex;
     justify-content: space-between;

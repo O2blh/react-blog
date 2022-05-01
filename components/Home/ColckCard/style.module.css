@@ -1,6 +1,9 @@
 @value colors: '../../../styles/colors.module.css';
 @value hoverColor, textColor, themeColor1 from colors;
 
+.card:hover{
+    transform: scale(1.04);
+}
 .rim{
     position: relative;
     width: 220px;
