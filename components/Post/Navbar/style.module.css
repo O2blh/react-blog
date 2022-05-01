@@ -1,0 +1,53 @@
+@value colors: '../../../styles/colors.module.css';
+@value themeColor1, hoverColor, textColor, textColor2 from colors;
+
+.postNavBar{  
+    width: 300px;
+    max-height: 700px;
+    position: fixed;
+    right: 10px;
+    top: 50%;
+    transform: translate(0,-50%);
+    margin: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    color: textColor;
+}
+.navBar{
+    display: block;
+}
+.hoverBar{
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translate(0,-50%);
+    width: 50px;
+    height: 50px;
+    border-radius: 14px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    transition: all .3s;
+    background-color: themeColor1;
+    cursor: pointer;
+}
+.hoverBar:hover{
+    background-color: hoverColor;
+}
+
+.drawer{
+    display: none;
+}
+
+@media screen and (max-width: 1540px) {
+    .navBar{
+        display: none;
+    }
+    .hoverBar{
+        display: flex;
+    }
+    .drawer{
+        display: block;
+    }
+}

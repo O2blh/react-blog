@@ -60,3 +60,13 @@ background-color: var(--themeColor1, rgb(22, 54, 51));
     color: var(--textColor, rgb(255, 255, 255));
 }
 /* Pagination组件样式重写*/
+
+/* Drawer组件样式重写*/
+.ant-drawer-header-close-only{
+    display: none;
+}
+.ant-drawer-body{
+    background-color: var(--themeColor, rgb(12, 29, 27));
+}
+
+/* Drawer组件样式重写*/

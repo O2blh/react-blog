@@ -1,0 +1,31 @@
+.markdown-navigation .title-anchor{
+    display: flex;
+    align-items: center;
+    padding: 4px 20px;
+    border-radius: 8px;
+    background-color: var(--themeColor1, rgb(22, 54, 51));
+    transition: all .3s;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    overflow-y: auto;
+}
+.markdown-navigation .title-anchor:hover,
+.markdown-navigation .title-anchor.active{
+   background-color: var(--hoverColor, rgb(98, 164, 218))
+}
+.markdown-navigation .title-level2{
+    margin-left: 18px;
+}
+.markdown-navigation .title-level3{
+    margin-left: 36px;
+}
+.markdown-navigation .title-level4{
+    margin-left: 54px;
+}
+.markdown-navigation .title-level5{
+    margin-left: 72px;
+}
+.markdown-navigation .title-level6{
+    margin-left: 90px;
+}

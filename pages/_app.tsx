@@ -4,6 +4,7 @@ import '@/styles/global.css'
 import '@/styles/antd.cover.css'
 import '@/styles/hljs.custom.css'
 import '@/styles/marked.css'
+import '@/styles/post.nav.css'
 import Layout from '@/components/Layout'
 
 function MyApp({ Component, pageProps }: AppProps) {
