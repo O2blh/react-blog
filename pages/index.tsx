@@ -17,7 +17,7 @@ import TagsCard from '@/components/Home/TagsCard'
 import SiteInfoCard from '@/components/Home/SiteInfoCard'
 import MyPagination from '@/components/MyPagination'
 
-import styles from '@/styles/index.module.css'
+import styles from './index.module.css'
 
 interface IProps {
   articles: Array<IArticle>

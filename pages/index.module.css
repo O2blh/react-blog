@@ -1,6 +1,6 @@
-@value constants: './constants.module.css';
+@value constants: '../styles/constants.module.css';
 @value contentWidth, asideWidth from constants;
-@value colors: './colors.module.css';
+@value colors: '../styles/colors.module.css';
 @value textColor from colors;
 
 .center{
@@ -41,4 +41,15 @@
 .aside{
     width: asideWidth;
     padding-bottom: 20px;
+}
+
+@media screen and (max-width: 1240px) {
+    .section{
+        width: 100vw;
+        padding: 0 10rem;
+    }
+    .aside{
+        display: none;
+    }
+
 }
