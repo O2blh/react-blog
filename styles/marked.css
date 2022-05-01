@@ -1,14 +1,19 @@
 .marked {
     word-break: break-all;
 }
+.marked h1,
 .marked h2,
 .marked h3,
 .marked h4,
-.marked h5 {
+.marked h5,
+.marked h6 {
   margin-top: 0;
   margin-bottom: 15px;
   color: var(--textColor, rgb(255, 255, 255));
   font-weight: 700;
+}
+.marked h6 {
+  font-size: 20px;
 }
 .marked h5 {
   font-size: 22px;
@@ -22,6 +27,12 @@
 .marked h2 {
   font-size: 28px;
 }
+.marked h1 {
+  font-size: 32px;
+}
+.marked h1:before {
+  content: '🎉';
+}
 .marked h2:before {
   content: '✒️';
 }
@@ -33,6 +44,9 @@
 }
 .marked h5:before {
   content: '🏷️';
+}
+.marked h6:before {
+  content: '🔖';
 }
 
 .marked p {
@@ -104,6 +118,7 @@
 }
   
   @media screen and (max-width: 1240px) {
+    .marked h1,
     .marked h2,
     .marked h3,
     .marked h4,
@@ -122,6 +137,9 @@
     }
     .marked h2 {
       font-size: 26rem;
+    }
+    .marked h1 {
+      font-size: 30rem;
     }
 
     .marked p {
