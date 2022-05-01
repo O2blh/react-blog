@@ -1,0 +1,25 @@
+@value colors: '../../../../styles/colors.module.css';
+@value hoverColor, textColor from colors;
+
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.card:hover{
+    transform: scale(1.04);
+}
+.icon{
+    width: 44px;
+    height: 44px;
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    transition: all .3s;
+}
+.icon:hover{
+    color: textColor;
+    background-color: hoverColor;
+}

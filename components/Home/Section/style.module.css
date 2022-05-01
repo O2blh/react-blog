@@ -1,0 +1,8 @@
+@value constants: '../../../styles/constants.module.css';
+@value asideWidth from constants;
+
+.section{
+    width: calc(100% - asideWidth);
+    padding-right: 20px;
+    padding-bottom: 20px;
+}

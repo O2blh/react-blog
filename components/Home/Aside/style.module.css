@@ -1,0 +1,7 @@
+@value constants: '../../../styles/constants.module.css';
+@value asideWidth from constants;
+
+.aside{
+    width: asideWidth;
+    padding-bottom: 20px;
+}

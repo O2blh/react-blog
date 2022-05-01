@@ -1,0 +1,30 @@
+@value colors: '../../../../styles/colors.module.css';
+@value hoverColor from colors;
+
+.card{
+    position: relative;
+    height: 200px;
+}
+.card:hover{
+    transform: scale(1.04);
+}
+
+.welcome{
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-size: 18px;
+    margin: 0;
+    line-height: 40px;
+    z-index: 10;
+}
+.strong{
+    color: hoverColor;
+}
+
+.avatar{
+    position: absolute;
+    right: -50px;
+    bottom: 0;
+    height: 200px;
+}
