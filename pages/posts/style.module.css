@@ -7,36 +7,6 @@
     width: contentWidth;
     margin: 0 auto;
 }
-
-.box{
-    width: 1000px;
-    height: 440px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-.title{
-    color: textColor;
-    font-size: 56px;
-    font-weight: 700;
-}
-.classify,
-.publishDate{
-    padding: 8px 12px;
-    margin-right: 16px;
-    border-radius: 12px;
-    font-size: 18px;
-    color: textColor;
-    background-color: themeColor;
-    transition: all .3s;
-    user-select: none;
-}
-.classify:hover,
-.publishDate:hover{
-    background-color: hoverColor;
-}
-
 .card{
     font-size: 20px;
     line-height: 1.6em;
@@ -51,4 +21,19 @@
 }
 .mb{
     margin-bottom: 60px;
+}
+
+@media screen and (max-width: 1240px) {
+    .center{
+        width: 100vw;
+    }
+    .card{
+        width: 100vw;
+        line-height: 1.5em;
+        padding: 15rem;
+        font-size: 18rem;
+    }
+    .mb{
+        margin-bottom: 40rem;
+    }
 }

@@ -2,7 +2,6 @@ import React from 'react'
 import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
 import { getAllArticleId, getArticleById } from '@/request/api'
-import dayjs from 'dayjs'
 import { NextPage } from 'next'
 import { IArticle } from '@/interface'
 
@@ -11,6 +10,7 @@ import PostTags from '@/components/Post/PostTags'
 import CopyRight from '@/components/Post/CopyRight'
 import Comment from '@/components/Post/Comment'
 import NavBar from '@/components/Post/Navbar'
+import PostTitle from '@/components/Post/PostTitle'
 import styles from './style.module.css'
 
 interface IProps {
@@ -23,13 +23,7 @@ const Post: NextPage<IProps> = ({ postData }) => {
       <Head>
         <title>{SITE_NAME}</title>
       </Head>
-      <div className={styles.box}>
-        <div className={styles.title}>{postData.articleTitle}</div>
-        <div className={styles.info}>
-          <span className={styles.classify}>{postData.classify}</span>
-          <span className={styles.publishDate}>{dayjs(postData.publishDate).format('YYYY-MM-DD hh:mm:ss')}</span>
-        </div>
-      </div>
+      <PostTitle postData={postData} />
       <div className={styles.card}>
         <MarkDown content={postData.articleContent} className={styles.mb} />
         <PostTags tags={postData.tags} />

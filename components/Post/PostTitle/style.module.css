@@ -1,0 +1,50 @@
+@value colors: '../../../styles/colors.module.css';
+@value textColor, themeColor, hoverColor from colors;
+
+.box{
+    width: 1000px;
+    height: 440px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.title{
+    color: textColor;
+    font-size: 56px;
+    font-weight: 700;
+}
+.classify,
+.publishDate{
+    padding: 8px 12px;
+    margin-right: 16px;
+    border-radius: 12px;
+    font-size: 18px;
+    color: textColor;
+    background-color: themeColor;
+    transition: all .3s;
+    user-select: none;
+}
+.classify:hover,
+.publishDate:hover{
+    background-color: hoverColor;
+}
+
+
+@media screen and (max-width: 1240px) {
+    .box{
+        width: 100vw;
+        height: 50vh;
+        padding: 0 50rem;
+    }
+    .title{
+        font-size: 40rem;
+    }
+    .classify,
+    .publishDate{
+        padding: 4rem 8rem;
+        margin-right: 8rem;
+        border-radius: 8rem;
+        font-size: 18rem;
+    }
+}
