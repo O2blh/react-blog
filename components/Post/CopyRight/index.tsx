@@ -18,9 +18,9 @@ const CopyRight = ({ title, link }) => {
       <div className={styles.articleTitle}>{title}</div>
       <div className={styles.articleLink}>
         {link}
-        <div className={styles.copyBtn} onClick={copyLink}>
+        <span className={styles.copyBtn} onClick={copyLink}>
           <CopyIcon />
-        </div>
+        </span>
       </div>
       <div className={styles.statement}>
         本站所有文章除特别声明外,均采用
