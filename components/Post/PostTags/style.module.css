@@ -14,3 +14,15 @@
 .tag:hover{
     background-color: hoverColor;
 }
+
+@media screen and (max-width: 1240px) {
+    .articleTags{
+        margin-bottom: 12rem;
+    }
+    .tag{
+        padding: 4rem 8rem;
+        border-radius: 8rem;
+        margin-right: 8rem;
+        transition: all .3s;
+    }
+}
