@@ -46,6 +46,12 @@
     }
     .hoverBar{
         display: flex;
+        width: 40rem;
+        height: 40rem;
+        border-radius: 10rem;
+        font-size: 18rem;
+        top: 80rem;
+        right: 10rem;
     }
     .drawer{
         display: block;

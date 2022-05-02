@@ -43,9 +43,6 @@ const NavBar = ({ content }) => {
 
   const [isDrawerShow, setIsDrawerShow] = useState(false)
 
-  const visibleChange = () => {
-    console.log(1)
-  }
   return (
     <>
       <MarkNav
@@ -64,13 +61,7 @@ const NavBar = ({ content }) => {
         className={classNames(styles.drawer, 'mobile-navBar-box')}
         width={340}
       >
-        <MarkNav
-          className={classNames(styles.postNavBar)}
-          source={content}
-          headingTopOffset={70}
-          ordered={false}
-          afterVisibleChange={visibleChange}
-        />
+        <MarkNav className={classNames(styles.postNavBar)} source={content} headingTopOffset={70} ordered={false} />
       </Drawer>
     </>
   )
