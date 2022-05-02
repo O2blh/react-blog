@@ -8,11 +8,15 @@
 .cancelBtn,
 .previewBtn,
 .sendBtn{
+    height: 100%;
     position: absolute;
     right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 16px;
     background-color: themeColor1;
-    padding: 2px 16px;
+    padding: 0 16px;
     transition: all .3s;
     cursor: pointer;
 }

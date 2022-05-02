@@ -77,16 +77,21 @@
         height: 34rem;
     }
     .name{
-        height: 28rem;
-        padding: 0 6rem;
+        height: 26rem;
+        padding: 0 4rem;
         border-radius: 6rem;
     }
     .date{
         margin-left: 6rem;
         color: textColor;
     }
+    .reply{
+        width: 26rem;
+        height: 26rem;
+        border-radius: 6rem;
+    }
     .content{
-        padding: 4rem 8rem;
-        border-radius: 8rem;
+        padding: 2rem 6rem;
+        border-radius: 6rem;
     }
 }
