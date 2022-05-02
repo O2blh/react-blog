@@ -1,6 +1,8 @@
 const ROOT = '/'
 const HOME = '/home'
 const ARTICLES = '/articles'
+const CLASSIFY = '/classify'
+const TAGS = '/tags'
 const GALLERY = '/gallery'
 const SAY = '/say'
 const MSG = '/msg'
@@ -14,6 +16,8 @@ const ROUTES = {
   ROOT,
   HOME,
   ARTICLES,
+  CLASSIFY,
+  TAGS,
   GALLERY,
   SAY,
   MSG,

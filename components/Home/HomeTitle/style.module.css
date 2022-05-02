@@ -20,3 +20,16 @@
     font-size: 28px;
     user-select: none;
 }
+
+@media screen and (max-width: 1240px) {
+    .box{
+        width: 100vw;
+        height: 50vh;
+    }
+    .name{
+        font-size: 40rem;
+    }
+    .desc{
+        font-size: 22rem;
+    }
+}

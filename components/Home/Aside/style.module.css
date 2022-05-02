@@ -5,3 +5,9 @@
     width: asideWidth;
     padding-bottom: 20px;
 }
+
+@media screen and (max-width: 1240px) {
+    .aside{
+        display: none;
+    }
+}

@@ -1,7 +1,7 @@
 @value constants: '../../../styles/constants.module.css';
 @value headerHeight, contentWidth from constants;
 @value colors: '../../../styles/colors.module.css';
-@value themeColor1, themeColor2, hoverColor, textColor from colors;
+@value themeColor, themeColor1, themeColor2, hoverColor, textColor from colors;
 
 .nav{
     position: fixed;
@@ -35,8 +35,11 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: textColor;
+    transition: all .3s;
 }
 .btn:hover{
+    color: textColor;
     background-color: hoverColor;
 }
 
@@ -108,6 +111,7 @@
     cursor: pointer;
     margin-right: 20px;
     color: textColor;
+    transition: all .3s;
 }
 .navBtn:hover{
     color: textColor;
@@ -140,6 +144,7 @@
     color: textColor;
     background-color: themeColor2;
     margin-bottom: 10px;
+    transition: all .3s;
 }
 
 .secondNavBtn:hover{
@@ -151,3 +156,52 @@
     margin-bottom: 0;
 }
 
+
+.mobileNavBtn{
+    display: none;
+    position: fixed;
+    top: 10rem;
+    right: 10rem;
+    width: 40rem;
+    height: 40rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 18rem;
+    z-index: 10;
+    color: textColor;
+    cursor: pointer;
+    transition: all .3s;
+    background-color: themeColor1;
+    border-radius: 10rem;
+}
+.mobileNavBtn:hover{
+    background-color: hoverColor;
+}
+.drawer{
+    display: none;
+}
+
+/*手机端导航样式*/
+
+@media screen and (max-width: 1240px) {
+    .nav{
+        display: none;
+    }
+    .mobileNavBtn{
+        display: flex;
+    }
+    .drawer{
+        display:block
+    }
+    .navBtn{
+        width: 60rem;
+        height: 34rem;
+        font-size: 18rem;
+        margin-right: 0;
+        margin-bottom: 16rem;
+        border-radius: 14rem;
+    }
+    .navBtn:last-child{
+        margin-bottom: 0;
+    }
+}

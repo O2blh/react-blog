@@ -30,3 +30,13 @@
 .tag:hover{
     background-color: hoverColor;
 }
+
+@media screen and (max-width: 1240px) {
+    .footer{
+        height: 70rem;
+        font-size: 14rem;
+    }
+    .tag{
+        display: none;
+    }
+}

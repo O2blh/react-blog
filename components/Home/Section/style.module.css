@@ -6,3 +6,10 @@
     padding-right: 20px;
     padding-bottom: 20px;
 }
+
+@media screen and (max-width: 1240px) {
+    .section{
+        width: 100vw;
+        padding: 0 16rem;
+    }
+}

@@ -1,6 +1,10 @@
-import React from 'react'
-import { HomeOutlined, BgColorsOutlined, SettingOutlined, CheckOutlined } from '@ant-design/icons'
+import React, { useState } from 'react'
+import { HomeOutlined, BgColorsOutlined, SettingOutlined, CheckOutlined, MenuOutlined } from '@ant-design/icons'
 import classNames from 'classnames'
+import Link from 'next/link'
+import ROUTES from '@/constants/routes'
+import { Drawer } from 'antd'
+
 import styles from './style.module.css'
 
 const Header = () => {
@@ -11,92 +15,149 @@ const Header = () => {
       children: [
         {
           label: '找文章',
-          route: '',
+          route: ROUTES.ARTICLES,
         },
         {
           label: '分类',
-          route: '',
+          route: ROUTES.CLASSIFY,
         },
         {
           label: '标签',
-          route: '',
+          route: ROUTES.TAGS,
         },
       ],
     },
     {
       label: '图库',
-      route: '',
+      route: ROUTES.GALLERY,
     },
     {
       label: '说说',
-      route: '',
+      route: ROUTES.SAY,
     },
     {
       label: '留言',
-      route: '',
+      route: ROUTES.MSG,
     },
     {
       label: '友链',
-      route: '',
+      route: ROUTES.FRIEND_LINK,
     },
     {
       label: '作品',
-      route: '',
+      route: ROUTES.WORKS,
     },
     {
       label: '建站',
-      route: '',
+      route: ROUTES.WEBSITE_LOGS,
     },
     {
       label: '关于',
-      route: '',
+      route: ROUTES.ABOUT,
     },
   ]
   const modeOptions = ['rgb(19, 38, 36)', 'rgb(110, 180, 214)', 'rgb(171, 194, 208)']
 
+  const [isMobileNavVisible, setIsMobileNavVisible] = useState(false)
+  const showDrawer = () => {
+    setIsMobileNavVisible(true)
+  }
+  const onClose = () => {
+    setIsMobileNavVisible(false)
+  }
   return (
-    <nav className={styles.nav}>
-      <div className={styles.navContent}>
-        <HomeOutlined className={classNames(styles.btn, styles.homeBtn)} />
-        <div className={classNames(styles.btn, styles.bgBtn)}>
-          <BgColorsOutlined />
-          <div className={styles.modeOptions}>
-            {modeOptions.map((mode, index) => {
+    <>
+      <nav className={styles.nav}>
+        <div className={styles.navContent}>
+          <Link href={ROUTES.ROOT} passHref>
+            <a href={ROUTES.HOME} className={classNames(styles.btn, styles.homeBtn)}>
+              <HomeOutlined />
+            </a>
+          </Link>
+          <div className={classNames(styles.btn, styles.bgBtn)}>
+            <BgColorsOutlined />
+            <div className={styles.modeOptions}>
+              {modeOptions.map((mode) => {
+                return (
+                  <div key={mode} className={styles.modeOption} style={{ backgroundColor: mode }}>
+                    <CheckOutlined />
+                  </div>
+                )
+              })}
+            </div>
+          </div>
+
+          <SettingOutlined className={classNames(styles.btn, styles.adminBtn)} />
+
+          {navs.map((nav) => {
+            if (nav.children) {
               return (
-                <div key={mode} className={styles.modeOption} style={{ backgroundColor: mode }}>
-                  <CheckOutlined />
+                <div className={styles.navBtn} key={nav.label}>
+                  {nav.label}
+                  <div className={styles.secondNav}>
+                    {nav.children.map((item) => {
+                      return (
+                        <Link href={item.route} passHref key={item.label}>
+                          <a className={styles.secondNavBtn} href={item.route}>
+                            {item.label}
+                          </a>
+                        </Link>
+                      )
+                    })}
+                  </div>
                 </div>
               )
-            })}
-          </div>
+            }
+            return (
+              <Link href={nav.route} passHref key={nav.label}>
+                <a className={styles.navBtn} key={nav.label} href={nav.route}>
+                  {nav.label}
+                </a>
+              </Link>
+            )
+          })}
         </div>
-
-        <SettingOutlined className={classNames(styles.btn, styles.adminBtn)} />
-        {navs.map((nav, index) => {
+      </nav>
+      <div className={styles.mobileNavBtn} onClick={showDrawer}>
+        <MenuOutlined />
+      </div>
+      <Drawer
+        className={classNames(styles.drawer, 'mobile-nav-box')}
+        placement='right'
+        onClose={onClose}
+        visible={isMobileNavVisible}
+      >
+        <Link href={ROUTES.ROOT} passHref>
+          <a className={styles.navBtn} key='主页' href={ROUTES.ROOT}>
+            主页
+          </a>
+        </Link>
+        {navs.map((nav) => {
           if (nav.children) {
             return (
-              <div className={styles.navBtn} key={nav.label}>
-                {nav.label}
-                <div className={styles.secondNav}>
-                  {nav.children.map((item) => {
-                    return (
-                      <a className={styles.secondNavBtn} key={item.label} href={item.route}>
+              <>
+                {nav.children.map((item) => {
+                  return (
+                    <Link href={item.route} passHref key={item.label}>
+                      <a className={styles.navBtn} href={item.route}>
                         {item.label}
                       </a>
-                    )
-                  })}
-                </div>
-              </div>
+                    </Link>
+                  )
+                })}
+              </>
             )
           }
           return (
-            <a className={styles.navBtn} key={nav.label} href={nav.route}>
-              {nav.label}
-            </a>
+            <Link href={nav.route} passHref key={nav.label}>
+              <a className={styles.navBtn} href={nav.route}>
+                {nav.label}
+              </a>
+            </Link>
           )
         })}
-      </div>
-    </nav>
+      </Drawer>
+    </>
   )
 }
 

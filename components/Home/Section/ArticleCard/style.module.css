@@ -1,7 +1,7 @@
 @value colors: '../../../../styles/colors.module.css';
 @value themeColor1, hoverColor from colors;
 
-.article{
+.card{
     cursor: pointer;
 }
 .title{
@@ -9,7 +9,9 @@
     font-weight: 700;
     text-align: center;
     height: 80px;
-    line-height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
 }
 .content{
@@ -49,4 +51,18 @@
    position: absolute;
    left: 0;
    top: 0;
+}
+
+@media screen and (max-width: 1240px){
+    .title{
+        height: 50rem;
+        font-size: 20rem;
+    }
+    .content{
+        height: 72rem;
+        font-size: 16rem;
+    }
+    .info{
+        display: none;
+    }
 }

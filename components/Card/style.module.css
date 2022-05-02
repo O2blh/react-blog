@@ -14,3 +14,12 @@
 .card:hover{
     transform: scale(1.02);
 }
+
+@media screen and (max-width: 1240px) {
+    .card{
+        border-radius: 18rem;
+        margin-bottom: 10rem;
+        padding: 10rem;
+    }
+       
+}
