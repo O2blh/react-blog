@@ -29,3 +29,27 @@
 .markdown-navigation .title-level6{
     margin-left: 90px;
 }
+
+@media screen and (max-width: 1240px) {
+    .markdown-navigation .title-anchor{
+        padding: 2rem 8rem;
+        border-radius: 8rem;
+        margin-bottom: 10rem;
+        font-size: 16rem;
+    }
+    .markdown-navigation .title-level2{
+        margin-left: 6rem;
+    }
+    .markdown-navigation .title-level3{
+        margin-left: 12rem;
+    }
+    .markdown-navigation .title-level4{
+        margin-left: 18rem;
+    }
+    .markdown-navigation .title-level5{
+        margin-left: 24rem;
+    }
+    .markdown-navigation .title-level6{
+        margin-left: 30rem;
+    }
+}

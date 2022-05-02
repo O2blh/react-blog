@@ -56,4 +56,11 @@
     .drawer{
         display: block;
     }
+    .postNavBar{  
+        width: 160rem;
+        max-height: 80vh;
+        right: 10rem;
+        margin: 0;
+        padding: 0;
+    }
 }

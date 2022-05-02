@@ -101,4 +101,14 @@ background-color: var(--themeColor1, rgb(22, 54, 51));
     overflow-x: hidden;
     overflow-y: auto;
 }
+
+.mobile-navBar-box .ant-drawer-content-wrapper{
+    width: 180rem!important;
+}
+
+@media screen and (max-width: 1240px) {
+    .ant-drawer-body{
+        padding: 0;    
+    }
+}
 /* Drawer组件样式重写*/

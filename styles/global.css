@@ -41,7 +41,7 @@ body{
 }
 
 @media screen and (max-width: 1240px) {
-  body::-webkit-scrollbar{
+  ::-webkit-scrollbar{
     display: none;
   }
 }
