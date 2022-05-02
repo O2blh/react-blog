@@ -1,0 +1,6 @@
+@value colors: '../../../../../styles/colors.module.css';
+@value textColor2 from colors;
+
+.replyName{
+    color: textColor2;
+}

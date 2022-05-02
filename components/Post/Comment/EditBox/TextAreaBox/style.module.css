@@ -1,0 +1,18 @@
+@value colors: '../../../../../styles/colors.module.css';
+@value themeColor1 from colors;
+
+.textareaBox{
+    border-radius: 14px;
+    height: 140px;
+    padding: 8px 16px;
+    background-color: themeColor1;
+    margin-bottom: 8px;
+}
+.textarea{
+    width: 100%;
+    height: 100%;
+    background-color: themeColor1;
+    border: none;
+    resize: none;
+    outline: none;
+}

@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
-import classNames from 'classnames'
-import Emoji from './Emoji'
+import Emoji from '../../../Emoji'
 import styles from './style.module.css'
 import Avatar from './Aratar'
+import ReplyBox from './ReplyBox'
+import InfoBox from './InfoBox'
+import TextAreaBox from './TextAreaBox'
+import CommentBtns from './CommentBtns'
 
 interface IUser {
   _id: string
@@ -16,61 +19,35 @@ interface IProps {
 }
 
 const EditBox: React.FC<IProps> = ({ replyPerson, closeReplyBox }) => {
+  const [username, setUserName] = useState('')
+  const [email, setEmail] = useState('')
+  const [link, setLink] = useState('')
   const [comment, setComment] = useState('')
 
   const emojiClickCallback = (emoji) => {
     setComment(comment + emoji)
   }
 
+  const isReply = !!replyPerson
+
   return (
     <div className={styles.editBox}>
-      {replyPerson && (
-        <div className={styles.replyNameBox}>
-          回复给「
-          <span className={styles.replyName}>{replyPerson.name}</span>
-          」：
-        </div>
-      )}
+      {replyPerson && <ReplyBox name={replyPerson.name} />}
       <div className={styles.contentBox}>
         <div className={styles.avatarBox}>
           <Avatar avatar={null} />
         </div>
         <div className={styles.editInputBox}>
-          <div className={styles.inputBox}>
-            <div className={classNames(styles.inputItem, styles.flex2)}>
-              <div className={styles.inputKey}>昵称</div>
-              <input className={styles.inputVal} type='text' placeholder='QQ号' />
-            </div>
-            <div className={classNames(styles.inputItem, styles.flex3)}>
-              <div className={styles.inputKey}>邮箱</div>
-              <input className={styles.inputVal} type='text' placeholder='必填' />
-            </div>
-            <div className={classNames(styles.inputItem, styles.flex3)}>
-              <div className={styles.inputKey}>网址</div>
-              <input className={styles.inputVal} type='text' placeholder='必填' />
-            </div>
-          </div>
-          <div className={styles.textareaBox}>
-            <textarea
-              className={styles.textarea}
-              placeholder='写点什么吗?支持markdown格式!
-可以在「昵称」处填写QQ号,自动获取「头像」和「QQ邮箱」!'
-              value={comment}
-              onInput={(e) => {
-                setComment(e.target.value)
-              }}
-            />
-          </div>
-          <div className={styles.commentBtns}>
-            <Emoji emojiClickCallback={emojiClickCallback} />
-            {replyPerson && (
-              <div className={styles.cancelBtn} onClick={closeReplyBox}>
-                取消
-              </div>
-            )}
-            <div className={styles.previewBtn}>预览</div>
-            <div className={styles.sendBtn}>发布</div>
-          </div>
+          <InfoBox
+            username={username}
+            setUserName={setUserName}
+            email={email}
+            setEmail={setEmail}
+            link={link}
+            setLink={setLink}
+          />
+          <TextAreaBox comment={comment} setComment={setComment} />
+          <CommentBtns isReply={isReply} closeReplyBox={closeReplyBox} emojiClickCallback={emojiClickCallback} />
         </div>
       </div>
     </div>
