@@ -2,5 +2,11 @@
 @value themeColor1, themeColor2, hoverColor, textColor from colors;
 
 .comment{
+    font-size: 18px;
+}
 
+@media screen and (max-width: 1240px) {
+    .comment{
+        font-size: 14rem;
+    }
 }

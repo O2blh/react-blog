@@ -181,5 +181,12 @@
     .marked hr {
       margin: 10rem 0;
     }
+
+        /*评论区*/
+    .commentContent p
+    {
+      margin: 0;
+      padding: 0;
+    }
   }
   

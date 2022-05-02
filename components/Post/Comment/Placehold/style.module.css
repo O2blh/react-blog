@@ -14,3 +14,12 @@
 .hasMsg{
     height: 60px;
 }
+
+@media screen and (max-width: 1240px) {
+    .noMsg{
+        height: 120rem;
+    }
+    .hasMsg{
+        height: 60rem;
+    }
+}

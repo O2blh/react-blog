@@ -46,3 +46,20 @@
     padding: 0 8px;
     margin: 0;
 }
+
+@media screen and (max-width: 1240px) {
+    .inputBox{
+        margin-bottom: 8rem;
+    }
+    .inputItem{
+        height: 28rem;
+        border-radius: 6rem;
+        margin-right: 6rem;
+    }
+    .inputKey{
+        width: 40rem;
+    }
+    .inputVal{
+        padding: 0 6rem;
+    }
+}

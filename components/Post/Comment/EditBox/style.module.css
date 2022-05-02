@@ -1,6 +1,5 @@
 .editBox{
     margin: 10px 0 20px;
-    font-size: 18px;
 }
 .contentBox{
     display: flex;
@@ -10,4 +9,16 @@
 }
 .editInputBox{
     width: calc(100% - 80px);
+}
+
+@media screen and (max-width: 1240px) {
+    .editBox{
+        margin: 10rem 0 20rem;
+    }
+    .avatarBox{
+        width: 45rem;
+    }
+    .editInputBox{
+        width: calc(100% - 45rem);
+    }
 }

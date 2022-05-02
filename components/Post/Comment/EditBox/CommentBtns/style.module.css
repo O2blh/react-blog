@@ -5,22 +5,6 @@
     display: flex;
     position:relative
 }
-.emojiBtn{
-    width: 36px;
-    height: 36px;
-    border-radius: 12px;
-    background-color: themeColor1;
-    transition: all .3s;
-    cursor: pointer;
-    margin-right: 8px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    user-select: none;
-}
-.emojiBtn:hover{
-    background-color: hoverColor;
-}
 .cancelBtn,
 .previewBtn,
 .sendBtn{
@@ -32,7 +16,7 @@
     transition: all .3s;
     cursor: pointer;
 }
-.cancelBtn:hover
+.cancelBtn:hover,
 .previewBtn:hover,
 .sendBtn:hover{
     background-color: hoverColor;
@@ -42,4 +26,19 @@
 }
 .cancelBtn{
     right: 160px;
+}
+
+@media screen and (max-width: 1240px) {
+    .cancelBtn,
+    .previewBtn,
+    .sendBtn{
+        border-radius: 6rem;
+        padding: 2rem 6rem;
+    }
+    .previewBtn{
+        right: 50rem;
+    }
+    .cancelBtn{
+        right: 100rem;
+    }
 }
