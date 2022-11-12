@@ -47,3 +47,12 @@ export const getNotice = async () => {
   const res = await service.get(GET_NOTICE)
   return res.data[0]
 }
+
+export const accessLog = (params) => {
+  service.post('/accessLog', params)
+}
+
+export const getSiteAccessCount = async () => {
+  const res = await service.get('/getAccessLogCount')
+  return res
+}

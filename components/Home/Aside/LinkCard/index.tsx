@@ -2,6 +2,9 @@ import React from 'react'
 import Icon from '@ant-design/icons/lib/components/Icon'
 import { GithubOutlined, QqOutlined, WechatOutlined } from '@ant-design/icons'
 import Card from '@/components/Card'
+import { Popover } from 'antd'
+import Image from 'next/image'
+
 import styles from './style.module.css'
 
 const CsdnSvg = () => (
@@ -25,12 +28,32 @@ const LinkCard = () => {
       <a href='https://gitee.com/bao-longhui/react-blog' target='_blank' rel='noreferrer' className={styles.icon}>
         <Icon component={CsdnIcon} />
       </a>
-      <div className={styles.icon}>
-        <QqOutlined />
-      </div>
-      <div className={styles.icon}>
-        <WechatOutlined />
-      </div>
+      <Popover
+        title={null}
+        content={
+          <div className={styles.qrcode}>
+            <Image src='/qq_qrcode.JPG' width={300} height={450} alt='' />
+          </div>
+        }
+        placement='bottom'
+      >
+        <div className={styles.icon}>
+          <QqOutlined />
+        </div>
+      </Popover>
+      <Popover
+        title={null}
+        content={
+          <div className={styles.qrcode}>
+            <Image src='/wx_qrcode.JPG' width={300} height={406} alt='' />
+          </div>
+        }
+        placement='bottom'
+      >
+        <div className={styles.icon}>
+          <WechatOutlined />
+        </div>
+      </Popover>
     </Card>
   )
 }

@@ -5,6 +5,8 @@ import Link from 'next/link'
 import ROUTES from '@/constants/routes'
 import { Drawer } from 'antd'
 
+import { BLOG_ADMIN_URL } from '@/constants/siteInfo'
+
 import styles from './style.module.css'
 
 const Header = () => {
@@ -86,8 +88,9 @@ const Header = () => {
               })}
             </div>
           </div>
-
-          <SettingOutlined className={classNames(styles.btn, styles.adminBtn)} />
+          <a href={BLOG_ADMIN_URL} className={classNames(styles.btn, styles.adminBtn)} target='_blank' rel='noreferrer'>
+            <SettingOutlined />
+          </a>
 
           {navs.map((nav) => {
             if (nav.children) {

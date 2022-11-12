@@ -33,7 +33,7 @@ const Home: NextPage<IProps> = ({ articles, classifies, tags, notice }) => {
     <div className={styles.center}>
       <Head>
         <title>{SITE_NAME}</title>
-        <meta name='description' content='伊之助的博客' />
+        <meta name='description' content={`${SITE_NAME}`} />
         <link rel='icon' href='/favicon.ico' />
       </Head>
       <HomeTitle />

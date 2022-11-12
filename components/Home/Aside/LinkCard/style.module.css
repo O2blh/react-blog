@@ -23,3 +23,7 @@
     color: textColor;
     background-color: hoverColor;
 }
+.qrcode{
+    border-radius: 8px;
+    overflow: hidden;
+}

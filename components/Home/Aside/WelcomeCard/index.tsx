@@ -9,13 +9,20 @@ const WelcomeCard = () => {
       <p className={styles.welcome}>
         下午好,
         <br />
-        我叫<span className={styles.strong}>一只猪</span>,
+        我叫<span className={styles.strong}>暴走</span>,
         <br />
-        欢迎来到
+        欢迎来到我
         <br />
-        我的<span>个人博客。</span>
+        <span>我的个人博客</span>
       </p>
-      <img className={styles.avatar} src='https://images-1310355014.cos.ap-nanjing.myqcloud.com/blog%2Favatar.webp' />
+      {/* <Image
+        className={styles.avatar}
+        src='https://images-1310355014.cos.ap-nanjing.myqcloud.com/blog/avatar_t.JPG'
+        width={200}
+        height={200}
+        alt=''
+      /> */}
+      <img className={styles.avatar} src='/avatar.png' />
     </Card>
   )
 }

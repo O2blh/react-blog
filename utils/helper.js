@@ -23,3 +23,22 @@ export const throttle = (fn, delay) => {
     }
   }
 }
+
+export const getReferrer = () => {
+  let referrer = ''
+  try {
+    referrer = window.top.document.referrer
+  } catch (e) {
+    if (window.parent) {
+      try {
+        referrer = window.parent.document.referrer
+      } catch (e2) {
+        referrer = ''
+      }
+    }
+  }
+  if (referrer === '') {
+    referrer = document.referrer
+  }
+  return referrer
+}

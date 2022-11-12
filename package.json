@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "server":"next build && next start",
     "prepare": "husky install"
   },
   "repository": {
