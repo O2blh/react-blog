@@ -1,11 +1,11 @@
 @value constants: '../../../styles/constants.module.css';
 @value footerHeight from constants;
 @value colors: '../../../styles/colors.module.css';
-@value themeColor1, textColor, hoverColor from colors;
+@value themeColor1, textColor, hoverColor, footerBg from colors;
 
-.footer{
+.footer {
     height: footerHeight;
-    background-color: rgba(0, 0, 0, .4);
+    background-color: footerBg;
     color: textColor;
     display: flex;
     flex-direction: column;
@@ -14,10 +14,12 @@
     font-weight: 700;
     font-size: 16px;
 }
-.footerTitle{
+
+.footerTitle {
     user-select: none;
 }
-.tag{
+
+.tag {
     background-color: themeColor1;
     padding: 4px 8px;
     border-radius: 6px;
@@ -27,16 +29,18 @@
     white-space: nowrap;
     user-select: none;
 }
-.tag:hover{
+
+.tag:hover {
     background-color: hoverColor;
 }
 
 @media screen and (max-width: 1240px) {
-    .footer{
+    .footer {
         height: 70rem;
         font-size: 14rem;
     }
-    .tag{
+
+    .tag {
         display: none;
     }
 }

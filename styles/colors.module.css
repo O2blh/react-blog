@@ -1,7 +1,8 @@
 @value themeColor: var(--themeColor, rgb(12, 29, 27));
 @value themeColor1: var(--themeColor1, rgb(22, 54, 51));
 @value themeColor2: var(--themeColor2, rgb(39, 95, 89));
-@value hoverColor: var(--hoverColor, rgb(98, 164, 218));
 @value textColor: var(--textColor, rgb(255, 255, 255));
-@value textColor2: var(--textColor2,#a7a7a7);
+@value textColor2: var(--textColor2, #a7a7a7);
+@value hoverColor: var(--hoverColor, rgb(98, 164, 218));
 @value tipColor: var(--tip, rgb(116, 116, 116));
+@value footerBg: var(--footerBg, rgba(0, 0, 0, 0.3));
