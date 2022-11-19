@@ -49,7 +49,10 @@ const MsgList = () => {
             </div>
             {showReplyBox && (
               <div className={styles.replyBox}>
-                <EditBox replyPerson={{ name: '蓝云' }} closeReplyBox={closeReplyBox} />
+                <EditBox
+                  replyPerson={{ _id: '1', name: '蓝云', email: '547525253@qq.com' }}
+                  closeReplyBox={closeReplyBox}
+                />
               </div>
             )}
           </div>

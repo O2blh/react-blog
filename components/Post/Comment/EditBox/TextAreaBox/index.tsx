@@ -10,7 +10,7 @@ const TextAreaBox = ({ comment, setComment }) => {
         placeholder='写点什么吗?支持markdown格式!
 可以在「昵称」处填写QQ号,自动获取「头像」和「QQ邮箱」!'
         value={comment}
-        onInput={(e) => {
+        onChange={(e) => {
           setComment(e.target.value)
         }}
       />

@@ -42,5 +42,6 @@ module.exports = {
     'jsx-a11y/no-static-element-interactions': 0,
     'react/no-array-index-key': 1,
     'consistent-return': 0,
+    'no-param-reassign': 0,
   },
 }

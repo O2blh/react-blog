@@ -4,5 +4,8 @@
     "editor.formatOnType": true,
     "[javascript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "Wscats.eno"
     }
 }

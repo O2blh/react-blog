@@ -13,7 +13,7 @@ const InfoBox = ({ username, setUserName, email, setEmail, link, setLink }) => {
           type='text'
           placeholder='QQ号'
           value={username}
-          onInput={(e) => {
+          onChange={(e) => {
             setUserName(e.target.value)
           }}
         />
@@ -25,7 +25,7 @@ const InfoBox = ({ username, setUserName, email, setEmail, link, setLink }) => {
           type='text'
           placeholder='必填'
           value={email}
-          onInput={(e) => {
+          onChange={(e) => {
             setEmail(e.target.value)
           }}
         />
@@ -37,7 +37,7 @@ const InfoBox = ({ username, setUserName, email, setEmail, link, setLink }) => {
           type='text'
           placeholder='必填'
           value={link}
-          onInput={(e) => {
+          onChange={(e) => {
             setLink(e.target.value)
           }}
         />

@@ -1,5 +1,7 @@
 import type { AppProps } from 'next/app'
 import { useEffect } from 'react'
+import store from '@/redux/store'
+import { Provider } from 'react-redux'
 import Script from 'next/script'
 import 'antd/dist/antd.css'
 import '@/styles/global.css'
@@ -46,10 +48,12 @@ function MyApp({ Component, pageProps }: AppProps) {
   }
 
   return (
-    <Layout>
-      <Script src='https://pv.sohu.com/cityjson?ie=utf-8' strategy='afterInteractive' onLoad={onCiteLoad} />
-      <Component {...pageProps} />
-    </Layout>
+    <Provider store={store}>
+      <Layout>
+        <Script src='https://pv.sohu.com/cityjson?ie=utf-8' strategy='afterInteractive' onLoad={onCiteLoad} />
+        <Component {...pageProps} />
+      </Layout>
+    </Provider>
   )
 }
 

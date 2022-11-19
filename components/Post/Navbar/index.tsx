@@ -15,7 +15,7 @@ const NavBar = ({ content }) => {
       if (scrollHeight < navHeight) {
         return
       }
-      const active = markNav.querySelector('.title-anchor.active')
+      const active = markNav.querySelector<HTMLElement>('.title-anchor.active')
       if (!active) {
         return
       }

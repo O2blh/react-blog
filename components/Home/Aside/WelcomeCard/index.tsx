@@ -13,7 +13,7 @@ const WelcomeCard = () => {
         <br />
         欢迎来到我
         <br />
-        <span>我的个人博客</span>
+        我的<span className={styles.strong}>个人博客</span>
       </p>
       {/* <Image
         className={styles.avatar}

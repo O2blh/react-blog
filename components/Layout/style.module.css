@@ -1,21 +1,34 @@
 @value constants: '../../styles/constants.module.css';
-@value headerHeight, footerHeight from constants;
+@value headerHeight,
+footerHeight from constants;
 
-.AppBox{
-    background-image: url('/bg0.webp');
+.AppBox {
     background-attachment: fixed;
     background-size: cover;
     background-position: center center;
 }
-.main{
+
+.bg0 {
+    background-image: url('/bg0.webp');
+}
+
+.bg1 {
+    background-image: url('/bg1.webp');
+}
+
+.bg2 {
+    background-image: url('/bg2.webp');
+}
+
+.main {
     min-height: calc(100vh - footerHeight);
     padding-top: 60px;
     padding-bottom: 40px;
 }
 
 @media screen and (max-width: 1240px) {
-    .main{
+    .main {
         padding-bottom: 20rem;
     }
-    
+
 }

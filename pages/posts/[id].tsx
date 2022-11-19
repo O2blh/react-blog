@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
 import { getAllArticleId, getArticleById } from '@/request/api'
-import { NextPage } from 'next'
+import { NextPage, GetStaticProps } from 'next'
 import { IArticle } from '@/interface'
 
 import MarkDown from '@/components/Post/MarkDown'
@@ -43,12 +43,15 @@ export async function getStaticPaths() {
   }
 }
 
-export async function getStaticProps({ params }) {
+export const getStaticProps: GetStaticProps = async (context) => {
+  const { params, preview, previewData } = context
+  console.log(context)
   const postData = await getArticleById(params.id)
   return {
     props: {
       postData: postData[0],
     },
+    revalidate: 10,
   }
 }
 

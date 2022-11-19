@@ -20,6 +20,7 @@
 }
 .strong{
     color: hoverColor;
+    font-weight: 700;
 }
 
 .avatar{
