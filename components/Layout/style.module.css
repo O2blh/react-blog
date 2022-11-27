@@ -1,6 +1,5 @@
 @value constants: '../../styles/constants.module.css';
-@value headerHeight,
-footerHeight from constants;
+@value headerHeight,footerHeight from constants;
 
 .AppBox {
     background-attachment: fixed;

@@ -62,13 +62,13 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     options.page = Number(context.query.page)
     CURRENT = options.page
   }
-  const articles = await getArticlesPagination(options)
+  const result = await getArticlesPagination(options)
   const classifies = await getClassifies()
   const tags = await getTags()
   const notice = await getNotice()
   return {
     props: {
-      articles,
+      articles: result.data,
       classifies,
       tags,
       notice,

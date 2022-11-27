@@ -7,9 +7,10 @@ const GET_CLASSIFIES = '/getClassifies'
 const GET_TAGS = '/getTags'
 const GET_NOTICE = '/getNotice'
 
-export const getArticlesPagination = async ({ page = 1, limit = 10 }) => {
-  const res = await service.get(`${GET_ARTICLES_PAGINATION}?page=${page}&limit=${limit}`)
-  return res.data
+export const getArticlesPagination = async ({ page = 1, limit = 10, keyword = '' }) => {
+  const res = await service.get(`${GET_ARTICLES_PAGINATION}?page=${page}&limit=${limit}&keyword=${keyword}`)
+  console.log('getArticlesPagination', res)
+  return res
 }
 
 export const getAllArticle = async () => {
