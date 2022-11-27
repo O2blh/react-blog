@@ -56,3 +56,13 @@ export const getSiteAccessCount = async () => {
   const res = await service.get('/getAccessLogCount')
   return res
 }
+
+export const getComments = async (articleId) => {
+  const res = await service.post('/getComments', { articleId })
+  return res.data
+}
+
+export const addComment = async (comment) => {
+  const res = await service.post('/addComment', comment)
+  return res
+}

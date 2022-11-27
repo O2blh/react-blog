@@ -1,16 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
-import { getAllArticleId, getArticleById } from '@/request/api'
+import { getAllArticleId, getArticleById, getComments } from '@/request/api'
 import { NextPage, GetStaticProps } from 'next'
-import { IArticle } from '@/interface'
-
+import { useMount } from 'ahooks'
+import { useDispatch } from 'react-redux'
+import { setArticle, setGetCommentListFunc } from '@/redux/articleSlice'
+import { IArticle, IComment } from '@/interface'
 import MarkDown from '@/components/Post/MarkDown'
 import PostTags from '@/components/Post/PostTags'
 import CopyRight from '@/components/Post/CopyRight'
 import Comment from '@/components/Post/Comment'
 import NavBar from '@/components/Post/Navbar'
 import PostTitle from '@/components/Post/PostTitle'
+
 import styles from './style.module.css'
 
 interface IProps {
@@ -18,6 +21,26 @@ interface IProps {
 }
 
 const Post: NextPage<IProps> = ({ postData }) => {
+  const [commentList, setCommentList] = useState<Array<IComment>>([])
+  const dispatch = useDispatch()
+  const getCommentList = async () => {
+    const res = await getComments(postData._id)
+    if (res) {
+      setCommentList(res)
+    }
+  }
+
+  useEffect(() => {
+    if (postData._id) {
+      getCommentList()
+    }
+  }, [postData._id])
+
+  useMount(() => {
+    dispatch(setArticle(postData))
+    dispatch(setGetCommentListFunc(getCommentList))
+  })
+
   return (
     <div className={styles.center}>
       <Head>
@@ -28,7 +51,7 @@ const Post: NextPage<IProps> = ({ postData }) => {
         <MarkDown content={postData.articleContent} className={styles.mb} />
         <PostTags tags={postData.tags} />
         <CopyRight title={postData.articleTitle} link='http://localhost:3000/posts/1fee1e97625a6ff3003bf0ae43cc9448' />
-        <Comment />
+        <Comment commentList={commentList} />
         <NavBar content={postData.articleContent} />
       </div>
     </div>

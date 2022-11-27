@@ -55,11 +55,19 @@
 .reply:hover{
     background-color: hoverColor;
 }
+.replyName{
+    color: textColor2;
+}
 .content{
     padding: 10px 16px;
     border-radius: 14px;
     background-color: themeColor1;
     word-break: break-all;
+}
+
+.replyList{
+    margin-top: 20PX;
+    margin-left: 80px;
 }
 
 .replyBox{

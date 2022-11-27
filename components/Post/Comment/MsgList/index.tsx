@@ -1,62 +1,39 @@
-import React, { useCallback, useState } from 'react'
-import classNames from 'classnames'
-import dayjs from 'dayjs'
-import { MessageOutlined } from '@ant-design/icons'
-import Avatar from '../EditBox/Aratar'
-
-import MarkDown from '../../MarkDown'
+import React, { useMemo } from 'react'
+import { IComment } from '@/interface'
+import Comment from './Comment'
 
 import styles from './style.module.css'
-import EditBox from '../EditBox'
 
-const MsgList = () => {
-  const msgList = [
-    {
-      _id: '112313',
-      avatar: '',
-      name: '蓝云',
-      date: 1651050683231,
-      msg: '666',
-      href: 'https://www.baidu.com',
-    },
-  ]
+interface IProps {
+  commentList: Array<IComment>
+}
 
-  const [showReplyBox, setshowReplyBox] = useState(false)
-
-  const closeReplyBox = useCallback(() => setshowReplyBox(!showReplyBox), [showReplyBox])
+const MsgList: React.FC<IProps> = ({ commentList }) => {
+  const firstCommentList = useMemo(() => {
+    const result = commentList.filter((comment) => !comment.commentId)
+    result.forEach((comment) => {
+      comment.replyList = commentList.filter((comm) => comm.commentId === comment._id)
+    })
+    return result
+  }, [commentList])
 
   return (
     <>
-      {msgList.map((item) => {
-        return (
-          <div key={item._id} className={styles.commentItem}>
-            <div className={styles.commentBox}>
-              <div className={styles.avatarBox}>
-                <Avatar avatar={null} />
+      {firstCommentList.map((item) => {
+        if (item.replyList && item.replyList.length > 0) {
+          return (
+            <>
+              <Comment key={item._id} comment={item} toComment={item} />
+              <div className={styles.replyList}>
+                {item.replyList.map((reply) => {
+                  const replyTo = commentList.find((list) => list._id === reply.replyId)
+                  return <Comment key={reply._id} comment={reply} toComment={item} replyTo={replyTo} />
+                })}
               </div>
-              <div className={styles.contentBox}>
-                <div className={styles.userInfo}>
-                  <a className={styles.name} href={item.href} target='_blank' rel='noreferrer'>
-                    {item.name}
-                  </a>
-                  <span className={styles.date}>{dayjs(item.date).format('YYYY-MM-DD hh:mm:ss')}</span>
-                  <span className={styles.reply} onClick={closeReplyBox}>
-                    <MessageOutlined />
-                  </span>
-                </div>
-                <MarkDown content={item.msg} className={classNames(styles.content, 'commentContent')} />
-              </div>
-            </div>
-            {showReplyBox && (
-              <div className={styles.replyBox}>
-                <EditBox
-                  replyPerson={{ _id: '1', name: '蓝云', email: '547525253@qq.com' }}
-                  closeReplyBox={closeReplyBox}
-                />
-              </div>
-            )}
-          </div>
-        )
+            </>
+          )
+        }
+        return <Comment key={item._id} comment={item} toComment={item} />
       })}
     </>
   )

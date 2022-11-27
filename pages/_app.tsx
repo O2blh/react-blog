@@ -1,5 +1,4 @@
 import type { AppProps } from 'next/app'
-import { useEffect } from 'react'
 import store from '@/redux/store'
 import { Provider } from 'react-redux'
 import Script from 'next/script'
@@ -15,19 +14,6 @@ import { getReferrer } from '@/utils/helper'
 import dayjs from 'dayjs'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  useEffect(() => {
-    function inMobile() {
-      document.getElementsByTagName('html')[0].style.fontSize = `${document.documentElement.clientWidth / 450}px`
-      if (document.getElementsByTagName('html')[0].clientWidth > 1240) {
-        document.body.style.overflowX = 'hidden'
-        document.body.style.overflowY = 'overlay'
-        document.body.style.width = '100%'
-      }
-    }
-    document.addEventListener('DOMContentLoaded', inMobile)
-    window.onresize = inMobile
-  }, [])
-
   const onCiteLoad = () => {
     console.log(window.returnCitySN)
     if (window.returnCitySN) {
@@ -51,6 +37,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <Provider store={store}>
       <Layout>
         <Script src='https://pv.sohu.com/cityjson?ie=utf-8' strategy='afterInteractive' onLoad={onCiteLoad} />
+        <Script src='/mobile.js' strategy='beforeInteractive' />
         <Component {...pageProps} />
       </Layout>
     </Provider>

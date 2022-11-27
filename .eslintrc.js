@@ -43,5 +43,6 @@ module.exports = {
     'react/no-array-index-key': 1,
     'consistent-return': 0,
     'no-param-reassign': 0,
+    'react/jsx-no-useless-fragment': 0,
   },
 }

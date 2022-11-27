@@ -23,3 +23,18 @@ export interface INotice {
   _id: string
   notice: string
 }
+
+export interface IComment {
+  _id: string
+  articleId: string
+  commentId: string
+  replyId: string
+  avatar: string
+  qq: string
+  nickname: string
+  email: string
+  url: string
+  date: number
+  comment: string
+  replyList: Array<IComment>
+}

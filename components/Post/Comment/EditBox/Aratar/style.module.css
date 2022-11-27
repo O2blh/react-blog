@@ -11,6 +11,7 @@
     background-color: themeColor1;
     color: themeColor2;
     font-size: 36px;
+    overflow: hidden;
 }
 
 @media screen and (max-width: 1240px) {

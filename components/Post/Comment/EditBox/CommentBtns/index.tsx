@@ -3,7 +3,23 @@ import Emoji from '@/components/Emoji'
 
 import styles from './style.module.css'
 
-const CommentBtns = ({ isReply, closeReplyBox, emojiClickCallback }) => {
+interface IProps {
+  isReply: boolean
+  closeReplyBox: () => void
+  emojiClickCallback: (any) => void
+  showPreview: boolean
+  setShowPreview: (boolean) => void
+  publishComment: () => void
+}
+
+const CommentBtns: React.FC<IProps> = ({
+  isReply,
+  closeReplyBox,
+  emojiClickCallback,
+  showPreview,
+  setShowPreview,
+  publishComment,
+}) => {
   return (
     <div className={styles.commentBtns}>
       <Emoji emojiClickCallback={emojiClickCallback} />
@@ -12,8 +28,17 @@ const CommentBtns = ({ isReply, closeReplyBox, emojiClickCallback }) => {
           取消
         </div>
       )}
-      <div className={styles.previewBtn}>预览</div>
-      <div className={styles.sendBtn}>发布</div>
+      <div
+        className={styles.previewBtn}
+        onClick={() => {
+          setShowPreview(!showPreview)
+        }}
+      >
+        {showPreview ? '关闭' : '预览'}
+      </div>
+      <div className={styles.sendBtn} onClick={publishComment}>
+        {isReply ? '回复' : '发布'}
+      </div>
     </div>
   )
 }
