@@ -5,4 +5,5 @@
     "[javascript]": {
         "editor.defaultFormatter": "dbaeumer.vscode-eslint"
     },
+    "editor.tabSize": 2,
 }

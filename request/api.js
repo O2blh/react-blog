@@ -34,6 +34,20 @@ export const getArticleById = async (id) => {
   return res.data
 }
 
+export const getArticlesByClassify = async (classify) => {
+  const res = await service.post('getArticlesByClassify', {
+    classify,
+  })
+  return res.data
+}
+
+export const getArticlesByTag = async (tag) => {
+  const res = await service.post('getArticlesByTag', {
+    tag,
+  })
+  return res.data
+}
+
 export const getClassifies = async () => {
   const res = await service.get(GET_CLASSIFIES)
   return res.data
@@ -66,4 +80,46 @@ export const getComments = async (articleId) => {
 export const addComment = async (comment) => {
   const res = await service.post('/addComment', comment)
   return res
+}
+
+export const getGalleryList = async () => {
+  const res = await service.get('/getGalleryList')
+  return res.data
+}
+
+export const getGalleryById = async (id) => {
+  const res = await service.post('/getGalleryById', {
+    id,
+  })
+  return res.data
+}
+
+export const getSays = async () => {
+  const res = await service.get('/getSays')
+  return res.data
+}
+
+export const getMsgs = async () => {
+  const res = await service.get('/getMsgs')
+  return res.data
+}
+
+export const getFriendsLink = async () => {
+  const res = await service.get('/getFriendsLink')
+  return res.data
+}
+
+export const getWorks = async () => {
+  const res = await service.get('/getWorks')
+  return res.data
+}
+
+export const getWebSiteLog = async () => {
+  const res = await service.get('/getWebSiteLog')
+  return res.data
+}
+
+export const getAbout = async () => {
+  const res = await service.get('/getAbout')
+  return res.data
 }

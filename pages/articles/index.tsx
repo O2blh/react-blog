@@ -4,7 +4,7 @@ import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
 import { GetServerSideProps } from 'next'
 import { getArticlesPagination } from '@/request/api'
-import { IArticle, IClassify } from '@/interface'
+import { IArticle } from '@/interface'
 import Router from 'next/router'
 import List from './List'
 
@@ -12,7 +12,7 @@ import styles from './index.module.css'
 
 interface IProps {
   articles: Array<IArticle>
-  classifies: Array<IClassify>
+  total: number
 }
 
 const PAGE_SIZE = 10

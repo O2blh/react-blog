@@ -38,3 +38,18 @@ export interface IComment {
   comment: string
   replyList: Array<IComment>
 }
+
+export interface IGallery {
+  _id: string
+  title: string
+  descr: string
+  cover: string
+  pics: Array<string>
+}
+
+export interface ISay {
+  _id: string
+  content: string
+  publishDate: number
+  updateDate: number
+}
