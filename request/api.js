@@ -100,26 +100,31 @@ export const getSays = async () => {
 }
 
 export const getMsgs = async () => {
-  const res = await service.get('/getMsgs')
+  const res = await service.post('/getMsgs')
   return res.data
 }
 
+export const addMsg = async (comment) => {
+  const res = await service.post('/addMsg', comment)
+  return res
+}
+
 export const getFriendsLink = async () => {
-  const res = await service.get('/getFriendsLink')
+  const res = await service.post('/getFriendsLink')
   return res.data
 }
 
 export const getWorks = async () => {
-  const res = await service.get('/getWorks')
+  const res = await service.post('/getWorks')
   return res.data
 }
 
 export const getWebSiteLog = async () => {
-  const res = await service.get('/getWebSiteLog')
+  const res = await service.post('/getWebSiteLog')
   return res.data
 }
 
 export const getAbout = async () => {
-  const res = await service.get('/getAbout')
+  const res = await service.post('/getAbout')
   return res.data
 }

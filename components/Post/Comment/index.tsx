@@ -9,15 +9,17 @@ import styles from './style.module.css'
 
 interface IProps {
   commentList: Array<IComment>
+  getCommentList: () => void
+  addComment: (arg0: any) => any
 }
 
-const Comment: React.FC<IProps> = ({ commentList }) => {
+const Comment: React.FC<IProps> = ({ commentList, getCommentList, addComment }) => {
   return (
     <div className={styles.comment}>
       <Divider />
-      <EditBox />
+      <EditBox getCommentList={getCommentList} addComment={addComment} />
       <Placeholder msgCount={commentList.length} />
-      <MsgList commentList={commentList} />
+      <MsgList commentList={commentList} getCommentList={getCommentList} addComment={addComment} />
     </div>
   )
 }

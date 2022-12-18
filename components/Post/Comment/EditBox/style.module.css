@@ -1,5 +1,10 @@
+@value colors: '../../../../styles/colors.module.css';
+@value textColor, textColor2, themeColor, themeColor1, themeColor2, hoverColor from colors;
+
 .editBox{
     margin: 10px 0 20px;
+    color: textColor;
+    font-size: 18px;
 }
 .contentBox{
     display: flex;

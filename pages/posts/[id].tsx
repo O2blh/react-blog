@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
-import { getAllArticleId, getArticleById, getComments } from '@/request/api'
+import { getAllArticleId, getArticleById, getComments, addComment } from '@/request/api'
 import { NextPage, GetStaticProps } from 'next'
-import { useMount } from 'ahooks'
 import { useDispatch } from 'react-redux'
-import { setArticle, setGetCommentListFunc } from '@/redux/articleSlice'
 import { IArticle, IComment } from '@/interface'
 import MarkDown from '@/components/Post/MarkDown'
 import PostTags from '@/components/Post/PostTags'
@@ -17,42 +15,44 @@ import PostTitle from '@/components/Post/PostTitle'
 import styles from './style.module.css'
 
 interface IProps {
-  postData: IArticle
+  article: IArticle
 }
 
-const Post: NextPage<IProps> = ({ postData }) => {
+const Post: NextPage<IProps> = ({ article }) => {
   const [commentList, setCommentList] = useState<Array<IComment>>([])
-  const dispatch = useDispatch()
   const getCommentList = async () => {
-    const res = await getComments(postData._id)
+    const res = await getComments(article._id)
     if (res) {
       setCommentList(res)
     }
   }
 
   useEffect(() => {
-    if (postData._id) {
+    if (article._id) {
       getCommentList()
     }
-  }, [postData._id])
+  }, [article._id])
 
-  useMount(() => {
-    dispatch(setArticle(postData))
-    dispatch(setGetCommentListFunc(getCommentList))
-  })
+  const publishComment = async (comment) => {
+    const res = await addComment({
+      articleId: article._id,
+      ...comment,
+    })
+    return res
+  }
 
   return (
     <div className={styles.center}>
       <Head>
         <title>{SITE_NAME}</title>
       </Head>
-      <PostTitle postData={postData} />
+      <PostTitle postData={article} />
       <div className={styles.card}>
-        <MarkDown content={postData.articleContent} className={styles.mb} />
-        <PostTags tags={postData.tags} />
-        <CopyRight title={postData.articleTitle} link='http://localhost:3000/posts/1fee1e97625a6ff3003bf0ae43cc9448' />
-        <Comment commentList={commentList} />
-        <NavBar content={postData.articleContent} />
+        <MarkDown content={article.articleContent} className={styles.mb} />
+        <PostTags tags={article.tags} />
+        <CopyRight title={article.articleTitle} link='http://localhost:3000/posts/1fee1e97625a6ff3003bf0ae43cc9448' />
+        <Comment commentList={commentList} getCommentList={getCommentList} addComment={publishComment} />
+        <NavBar content={article.articleContent} />
       </div>
     </div>
   )
@@ -72,7 +72,7 @@ export const getStaticProps: GetStaticProps = async (context) => {
   const postData = await getArticleById(params.id)
   return {
     props: {
-      postData: postData[0],
+      article: postData[0],
     },
     revalidate: 10,
   }

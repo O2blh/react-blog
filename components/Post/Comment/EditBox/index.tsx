@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
-import { useMemoizedFn } from 'ahooks'
-import { addComment } from '@/request/api'
-import { IArticle, IComment } from '@/interface'
-import { useSelector } from 'react-redux'
+
+import { IComment } from '@/interface'
 import { message } from 'antd'
 import Avatar from './Aratar'
 import ReplyBox from './ReplyBox'
@@ -17,9 +15,11 @@ interface IProps {
   toComment?: IComment
   reply?: IComment
   closeReplyBox?: () => void
+  getCommentList: () => void
+  addComment: (arg0: any) => any
 }
 
-const EditBox: React.FC<IProps> = ({ toComment, reply, closeReplyBox }) => {
+const EditBox: React.FC<IProps> = ({ toComment, reply, closeReplyBox, getCommentList, addComment }) => {
   const [avatar, setAvatar] = useState(null)
   const [qq, setQQ] = useState('')
   const [username, setUserName] = useState('')
@@ -27,8 +27,6 @@ const EditBox: React.FC<IProps> = ({ toComment, reply, closeReplyBox }) => {
   const [link, setLink] = useState('')
   const [comment, setComment] = useState('')
   const [showPreview, setShowPreview] = useState(false)
-  const article: IArticle = useSelector((state) => state.article.article)
-  const getCommentList = useSelector((state) => state.article.getCommentList)
 
   const emojiClickCallback = (emoji) => {
     setComment(comment + emoji)
@@ -36,13 +34,12 @@ const EditBox: React.FC<IProps> = ({ toComment, reply, closeReplyBox }) => {
 
   const isReply = !!reply
 
-  const publishComment = useMemoizedFn(async () => {
+  const publishComment = async () => {
     if (!comment) {
       message.warning('请先输入评论内容')
       return
     }
     const res = await addComment({
-      articleId: article._id,
       commentId: toComment?._id || '',
       replyId: reply?._id || '',
       avatar,
@@ -63,9 +60,11 @@ const EditBox: React.FC<IProps> = ({ toComment, reply, closeReplyBox }) => {
       setLink('')
       setComment('')
       setShowPreview(false)
-      closeReplyBox()
+      if (closeReplyBox) {
+        closeReplyBox()
+      }
     }
-  })
+  }
 
   return (
     <div className={styles.editBox}>

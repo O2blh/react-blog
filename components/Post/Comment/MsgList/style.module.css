@@ -3,6 +3,7 @@
 
 .commentItem{
     margin-bottom: 20px;
+    color: textColor;
 }
 .commentItem:last-child{
     margin-bottom: 0;
@@ -15,6 +16,7 @@
 }
 .contentBox{
     width: calc(100% - 80px);
+    
 }
 .userInfo{
     position: relative;

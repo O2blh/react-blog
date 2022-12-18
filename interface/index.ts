@@ -53,3 +53,11 @@ export interface ISay {
   publishDate: number
   updateDate: number
 }
+
+export interface IFriendLink {
+  _id: string
+  name: string
+  desc: string
+  avatar: string
+  url: string
+}

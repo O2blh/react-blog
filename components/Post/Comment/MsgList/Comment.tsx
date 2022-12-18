@@ -13,9 +13,11 @@ interface IProps {
   comment: IComment
   toComment: IComment
   replyTo?: IComment
+  getCommentList: () => void
+  addComment: (arg0: any) => any
 }
 
-const Comment: React.FC<IProps> = ({ comment, toComment, replyTo }) => {
+const Comment: React.FC<IProps> = ({ comment, toComment, replyTo, getCommentList, addComment }) => {
   const [showReplyBox, setshowReplyBox] = useState(false)
 
   const closeReplyBox = () => {
@@ -95,7 +97,13 @@ const Comment: React.FC<IProps> = ({ comment, toComment, replyTo }) => {
       </div>
       {showReplyBox && (
         <div className={styles.replyBox}>
-          <EditBox toComment={toComment || comment} reply={comment} closeReplyBox={closeReplyBox} />
+          <EditBox
+            toComment={toComment || comment}
+            reply={comment}
+            closeReplyBox={closeReplyBox}
+            getCommentList={getCommentList}
+            addComment={addComment}
+          />
         </div>
       )}
     </div>
