@@ -61,3 +61,17 @@ export interface IFriendLink {
   avatar: string
   url: string
 }
+
+export interface IWork {
+  _id: string
+  name: string
+  desc: string
+  cover: string
+  url: string
+}
+
+export interface ISiteLog {
+  _id: string
+  content: string
+  logDate: number
+}

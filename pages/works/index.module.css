@@ -1,0 +1,27 @@
+@value colors: '../../styles/colors.module.css';
+@value textColor, themeColor, themeColor1, themeColor2, hoverColor from colors;
+@value constants: '../../styles/constants.module.css';
+@value contentWidth from constants;
+
+.center{
+    width: contentWidth;
+    margin: 0 auto;
+}
+.title{
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 56px;
+    font-weight: 700;
+    color: textColor;
+}
+.content{ 
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 16px;
+    padding: 30px;
+    margin: 0 auto;
+    background-color: themeColor;
+}

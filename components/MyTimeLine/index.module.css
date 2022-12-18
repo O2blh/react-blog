@@ -1,0 +1,61 @@
+@value colors: '../../styles/colors.module.css';
+@value themeColor1, themeColor2, hoverColor, textColor, tipColor from colors;
+
+
+.timeline{
+  border-left: 6px solid themeColor1;
+}
+.date{
+  position: relative;
+  color: textColor;
+  font-size: 28px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+.dot{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: themeColor1;
+  left: 0;
+  top: 50%;
+  transform: translate(-60%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+
+}
+.dotIn{
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  transition: all .2s;
+  background-color: hoverColor;
+}
+.date:hover .dotIn{
+  width: 24px;
+  height: 24px;
+}
+.content{
+  background-color: themeColor1;
+  transition: all .2s;
+  padding: 10px 20px;
+  border-radius: 16px;
+  margin-left: 20px;
+  margin-bottom: 0;
+}
+.content:hover{
+  transform: scale(1.02);
+}
+.log{
+  color: textColor;
+  font-size: 20px;
+  margin-bottom: 6px;
+  list-style: none;
+}
+.log:last-child{
+  margin-bottom: 0;
+}
