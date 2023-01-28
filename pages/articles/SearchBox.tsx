@@ -32,6 +32,11 @@ const SearchBox: React.FC<IProps> = ({ onKeywordChange }) => {
         onChange={(e) => setKeyword(e.target.value)}
         placeholder='搜索文章标题...'
         className={styles.searchInput}
+        onKeyUp={(e) => {
+          if (e.keyCode === 13) {
+            onSearch()
+          }
+        }}
       />
       <div className={styles.btn} onClick={onSearch}>
         <ArrowRightOutlined />
