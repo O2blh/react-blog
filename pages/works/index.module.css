@@ -25,3 +25,62 @@
     margin: 0 auto;
     background-color: themeColor;
 }
+.work{
+    position: relative;
+    width: 460px;
+    height: 345px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    transition: all .3s;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.work:hover{
+    transform: scale(1.04);
+}
+.work:nth-child(2n){
+    margin-right: 0;
+}
+.work:last-child,
+.work:nth-last-child(2){
+    margin-bottom: 0;
+}
+
+.workTitle{
+    color: textColor;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 40px;
+    margin-top: 40px;
+}
+.split{
+    display: none;
+    height: 4px;
+    background-color: textColor;
+    transition: all .3s;
+    margin: 0px 40px 10px 40px;
+}
+.desc{
+    display: none;
+    color: textColor;
+    font-size: 18px;
+    transition: all .3s;
+    margin: 0 40px;
+}
+.mask{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;   
+    transition: all .3s;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.6);
+    z-index: -1;
+}
+.work:hover .split,
+.work:hover .desc,
+.work:hover .mask{
+    display: block;
+}
