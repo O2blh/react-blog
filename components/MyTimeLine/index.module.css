@@ -4,6 +4,7 @@
 
 .timeline{
   border-left: 6px solid themeColor1;
+  width: 100%;
 }
 .date{
   position: relative;

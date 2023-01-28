@@ -19,7 +19,7 @@ const FriendLink: NextPage<IProps> = ({ logList }) => {
     // })
     const logMap = logList.map((log) => {
       return {
-        date: dayjs(log.logDate).format('YYYY-MM'),
+        date: dayjs(log.logDate).format('YYYY-MM-DD'),
         content: log.content,
       }
     })
