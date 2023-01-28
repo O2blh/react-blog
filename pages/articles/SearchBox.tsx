@@ -9,13 +9,7 @@ interface IProps {
 }
 
 const SearchBox: React.FC<IProps> = ({ onKeywordChange }) => {
-  const router = useRouter()
-  let defaultKeyword = ''
-  if (router.query.keyword) {
-    defaultKeyword = decodeURIComponent(router.query.keyword)
-  }
-
-  const [keyword, setKeyword] = useState(defaultKeyword)
+  const [keyword, setKeyword] = useState('')
   const onSearch = () => {
     onKeywordChange(keyword)
   }
