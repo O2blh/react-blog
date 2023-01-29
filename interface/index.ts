@@ -75,3 +75,10 @@ export interface ISiteLog {
   content: string
   logDate: number
 }
+
+export interface IAbout {
+  _id: string
+  content: string
+  modifyDate: string
+  type: number
+}
