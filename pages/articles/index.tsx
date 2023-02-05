@@ -5,7 +5,7 @@ import { SITE_NAME } from '@/constants/siteInfo'
 import { getArticlesPagination } from '@/request/api'
 import { IArticle } from '@/interface'
 
-import List from './List'
+import List from '@/components/Articles/List'
 
 import styles from './index.module.css'
 
