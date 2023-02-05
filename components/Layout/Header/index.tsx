@@ -6,7 +6,7 @@ import ROUTES from '@/constants/routes'
 import { Drawer } from 'antd'
 
 import { BLOG_ADMIN_URL } from '@/constants/siteInfo'
-import { useDispatch, useSelector } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '@/redux/reduxHooks'
 import { setMode } from '@/redux/modeSlice'
 
 import styles from './style.module.css'
@@ -63,8 +63,8 @@ const navs = [
 const modeOptions = ['rgb(19, 38, 36)', 'rgb(110, 180, 214)', 'rgb(171, 194, 208)']
 
 const Header = () => {
-  const dispatch = useDispatch()
-  const curModeIndex = useSelector((state) => state.mode.value)
+  const dispatch = useAppDispatch()
+  const curModeIndex = useAppSelector((state) => state.mode.value)
 
   const modeChange = (modeIndex) => {
     dispatch(setMode(Number(modeIndex)))

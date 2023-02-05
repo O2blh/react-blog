@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import classNames from 'classnames'
-import { useSelector, useDispatch } from 'react-redux'
+import { useAppDispatch, useAppSelector } from '@/redux/reduxHooks'
 import { useLocalStorageState, useMount } from 'ahooks'
 import { setMode } from '@/redux/modeSlice'
 import Header from './Header'
@@ -10,8 +10,8 @@ import styles from './style.module.css'
 import { modeMap, modeMapProps } from './Header/modeMap'
 
 const Layout = ({ children }) => {
-  const dispatch = useDispatch()
-  const mode = useSelector((state) => state.mode.value)
+  const dispatch = useAppDispatch()
+  const mode = useAppSelector((state) => state.mode.value)
   const bgClasses = [styles.bg0, styles.bg1, styles.bg2]
 
   const [localMode, setLocalMode] = useLocalStorageState('localMode')
