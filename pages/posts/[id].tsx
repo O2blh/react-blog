@@ -3,7 +3,6 @@ import Head from 'next/head'
 import { SITE_NAME } from '@/constants/siteInfo'
 import { getAllArticleId, getArticleById, getComments, addComment } from '@/request/api'
 import { NextPage, GetStaticProps } from 'next'
-import { useDispatch } from 'react-redux'
 import { IArticle, IComment } from '@/interface'
 import MarkDown from '@/components/Post/MarkDown'
 import PostTags from '@/components/Post/PostTags'
@@ -20,6 +19,7 @@ interface IProps {
 
 const Post: NextPage<IProps> = ({ article }) => {
   const [commentList, setCommentList] = useState<Array<IComment>>([])
+
   const getCommentList = async () => {
     const res = await getComments(article._id)
     if (res) {
@@ -41,6 +41,13 @@ const Post: NextPage<IProps> = ({ article }) => {
     return res
   }
 
+  const [url, setUrl] = useState('')
+  useEffect(() => {
+    if (window) {
+      setUrl(window.location.origin + window.location.pathname)
+    }
+  }, [])
+
   return (
     <div className={styles.center}>
       <Head>
@@ -50,7 +57,7 @@ const Post: NextPage<IProps> = ({ article }) => {
       <div className={styles.card}>
         <MarkDown content={article.articleContent} className={styles.mb} />
         <PostTags tags={article.tags} />
-        <CopyRight title={article.articleTitle} link='http://localhost:3000/posts/1fee1e97625a6ff3003bf0ae43cc9448' />
+        <CopyRight title={article.articleTitle} link={url} />
         <Comment commentList={commentList} getCommentList={getCommentList} addComment={publishComment} />
         <NavBar content={article.articleContent} />
       </div>
@@ -62,7 +69,7 @@ export async function getStaticPaths() {
   const paths = await getAllArticleId()
   return {
     paths,
-    fallback: false,
+    fallback: 'blocking',
   }
 }
 

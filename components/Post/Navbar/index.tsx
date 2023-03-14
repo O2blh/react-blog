@@ -39,7 +39,7 @@ const NavBar = ({ content }) => {
     return () => {
       window.removeEventListener('scroll', debounceHandleScroll)
     }
-  })
+  }, [])
 
   const [isDrawerShow, setIsDrawerShow] = useState(false)
 
